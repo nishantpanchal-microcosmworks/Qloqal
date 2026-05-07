@@ -1,0 +1,12 @@
+node_modules
+dist
+.DS_Store
+*.log
+.vercel
+.env
+.env.local
+.env.*.local
+
+# TanStack Router auto-generates this on dev/build — keep stub at start, ignore after.
+# (Comment this line out if you'd prefer to commit the generated file.)
+src/routeTree.gen.ts

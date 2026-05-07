@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-container": "#006420",
+                        "on-secondary-container": "#a6afff",
+                        "on-error": "#690005",
+                        "on-background": "#e0e3e5",
+                        "secondary": "#bcc2ff",
+                        "on-secondary-fixed-variant": "#2234b8",
+                        "tertiary-fixed": "#e3e1ed",
+                        "tertiary": "#e8e6f2",
+                        "surface-bright": "#363a3b",
+                        "primary-container": "#47e865",
+                        "error": "#ffb4ab",
+                        "on-tertiary": "#2f3038",
+                        "on-secondary": "#00179c",
+                        "surface-container-high": "#272a2c",
+                        "inverse-surface": "#e0e3e5",
+                        "surface-tint": "#40e360",
+                        "secondary-container": "#2234b8",
+                        "outline-variant": "#3d4a3b",
+                        "surface-container-highest": "#323537",
+                        "primary-fixed": "#6dff7f",
+                        "on-tertiary-container": "#54555e",
+                        "tertiary-container": "#cbcad5",
+                        "on-secondary-fixed": "#000b63",
+                        "primary-fixed-dim": "#40e360",
+                        "on-surface-variant": "#bbcbb7",
+                        "on-primary-fixed-variant": "#005319",
+                        "surface-dim": "#101415",
+                        "on-primary": "#00390e",
+                        "error-container": "#93000a",
+                        "background": "#101415",
+                        "surface": "#101415",
+                        "surface-container": "#1d2022",
+                        "primary": "#96ff9a",
+                        "on-tertiary-fixed-variant": "#45464f",
+                        "surface-variant": "#323537",
+                        "secondary-fixed-dim": "#bcc2ff",
+                        "inverse-on-surface": "#2d3133",
+                        "on-tertiary-fixed": "#1a1b23",
+                        "inverse-primary": "#006e23",
+                        "secondary-fixed": "#dfe0ff",
+                        "on-error-container": "#ffdad6",
+                        "tertiary-fixed-dim": "#c6c5d0",
+                        "on-surface": "#e0e3e5",
+                        "surface-container-low": "#191c1e",
+                        "surface-container-lowest": "#0b0f10",
+                        "outline": "#869582",
+                        "on-primary-fixed": "#002106"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "xl": "40px",
+                        "sm": "8px",
+                        "xs": "4px",
+                        "lg": "24px",
+                        "unit": "4px",
+                        "container-max": "1440px",
+                        "xxl": "64px",
+                        "md": "16px"
+                    },
+                    "fontFamily": {
+                        "h3": ["Plus Jakarta Sans"],
+                        "h1": ["Plus Jakarta Sans"],
+                        "h2": ["Plus Jakarta Sans"],
+                        "button": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "h3": ["24px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "h1": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "700"}],
+                        "h2": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "button": ["14px", {"lineHeight": "1", "fontWeight": "500"}],
+                        "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(29, 32, 34, 0.4);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glow-hover:hover {
+            box-shadow: 0 0 20px rgba(71, 232, 101, 0.15);
+        }
+        .gradient-border {
+            border: 1px solid transparent;
+            background: linear-gradient(to right, rgba(255,255,255,0.1), rgba(255,255,255,0.02)) border-box;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background selection:bg-primary selection:text-on-primary">
+<!-- TopNavBar Shell -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface/80 backdrop-blur-xl border-b border-white/10 shadow-lg shadow-primary/5">
+<div class="flex justify-between items-center max-w-container-max mx-auto px-gutter h-20">
+<div class="text-h2 font-h2 font-bold text-primary">Qloqal</div>
+<div class="hidden md:flex items-center gap-xl">
+<a class="text-on-surface-variant font-body-md hover:text-primary transition-colors duration-200" href="#">Solutions</a>
+<a class="text-on-surface-variant font-body-md hover:text-primary transition-colors duration-200" href="#">Pricing</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1" href="#">Enterprise</a>
+<a class="text-on-surface-variant font-body-md hover:text-primary transition-colors duration-200" href="#">Resources</a>
+</div>
+<div class="flex items-center gap-md">
+<button class="text-on-surface font-button px-md py-sm hover:text-primary transition-colors duration-200">Login</button>
+<button class="bg-primary-container text-on-primary-container font-button px-lg py-sm rounded-lg active:scale-95 transition-all duration-200 glow-hover">Get Started</button>
+</div>
+</div>
+</nav>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative overflow-hidden py-xxl md:py-32 border-b border-white/5">
+<div class="absolute inset-0 z-0">
+<div class="absolute top-1/4 -right-1/4 w-[600px] h-[600px] bg-primary/10 blur-[120px] rounded-full"></div>
+<div class="absolute bottom-1/4 -left-1/4 w-[600px] h-[600px] bg-secondary-container/10 blur-[120px] rounded-full"></div>
+</div>
+<div class="max-w-container-max mx-auto px-gutter relative z-10">
+<div class="grid md:grid-cols-2 gap-xl items-center">
+<div>
+<span class="inline-block px-md py-xs rounded-full bg-primary/10 text-primary font-label-caps text-label-caps mb-md border border-primary/20">ENTERPRISE SOLUTIONS</span>
+<h1 class="font-h1 text-h1 text-on-surface mb-md">Hyperlocal scale. Global <span class="text-primary">Reliability.</span></h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-xl max-w-lg">
+                            Empower your multi-vendor ecosystem with Qloqal’s enterprise infrastructure. Custom APIs, dedicated support, and military-grade security built for the next generation of commerce.
+                        </p>
+<div class="flex flex-wrap gap-md">
+<button class="bg-primary-container text-on-primary-container font-button px-xl py-md rounded-lg text-lg active:scale-95 transition-all duration-200 glow-hover">Request Demo</button>
+<button class="border border-outline-variant text-on-surface font-button px-xl py-md rounded-lg text-lg hover:bg-white/5 transition-all">View Architecture</button>
+</div>
+</div>
+<div class="relative group">
+<div class="absolute -inset-1 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-xl blur opacity-75 group-hover:opacity-100 transition duration-1000"></div>
+<div class="relative glass-card rounded-xl p-md">
+<img alt="" class="w-full h-auto rounded-lg shadow-2xl" data-alt="A sophisticated 3D isometric visualization of a global data network. Glowing green nodes represent local hubs connected by ethereal light beams across a dark, reflective digital topography. The aesthetic is high-end corporate tech, featuring deep black surfaces, glass textures, and soft ambient neon green lighting that emphasizes precision and interconnected enterprise systems." src="https://lh3.googleusercontent.com/aida/ADBb0uiusoZ4A5zyf0YNHkCfOGQID81xS7ein9vH52_yBEUQa9Pry9bN-DzKcJdWsvBDp9IedZCwoiDuxnOVbWEaUAP3liQGEV-BDmneIExe0Sbg27NY2sBsWZcUKWEKaJLN6SgNK_HQBXY7hy4HsBoAGi4x-WB1Ugl7iGNGB1G3Kaenzq_Ym6-OvItAW3biVYxQJ4tz-wpZPsGxQFE8cOzXvtAbXpqWbWjCbEoby1sozkV5Cmc8nci9bv3IPbE"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Trust/Social Proof -->
+<section class="py-xl bg-surface-container-low/30">
+<div class="max-w-container-max mx-auto px-gutter">
+<p class="text-center font-label-caps text-label-caps text-on-surface-variant mb-xl opacity-60">TRUSTED BY INDUSTRY TITANS</p>
+<div class="flex flex-wrap justify-center items-center gap-xxl grayscale opacity-50">
+<div class="h-8 w-32 bg-white/20 rounded"></div>
+<div class="h-8 w-24 bg-white/20 rounded"></div>
+<div class="h-8 w-40 bg-white/20 rounded"></div>
+<div class="h-8 w-28 bg-white/20 rounded"></div>
+<div class="h-8 w-36 bg-white/20 rounded"></div>
+</div>
+</div>
+</section>
+<!-- Bento Grid Features -->
+<section class="py-xxl max-w-container-max mx-auto px-gutter">
+<div class="text-center mb-xxl">
+<h2 class="font-h2 text-h2 text-on-surface mb-md">Architected for Complexity</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto">From multi-region vendor management to deep internal integrations, Qloqal handles the heavy lifting so your team can focus on growth.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-lg">
+<!-- Large Card -->
+<div class="md:col-span-8 glass-card p-xl rounded-xl relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-xl opacity-10">
+<span class="material-symbols-outlined text-[120px]" style="font-variation-settings: 'FILL' 1;">hub</span>
+</div>
+<div class="relative z-10 h-full flex flex-col">
+<div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-md border border-primary/20">
+<span class="material-symbols-outlined text-primary">groups_3</span>
+</div>
+<h3 class="font-h3 text-h3 text-on-surface mb-md">Multi-Vendor Orchestration</h3>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md mb-xl">Manage thousands of sub-merchants with unified reporting, custom payout schedules, and automated KYC/AML workflows tailored to local regulations.</p>
+<div class="mt-auto flex gap-sm">
+<span class="px-md py-sm bg-white/5 rounded-full text-body-sm">Unified Dashboard</span>
+<span class="px-md py-sm bg-white/5 rounded-full text-body-sm">Global Payouts</span>
+</div>
+</div>
+</div>
+<!-- Vertical Card -->
+<div class="md:col-span-4 glass-card p-xl rounded-xl group hover:border-primary/30 transition-all">
+<div class="w-12 h-12 bg-secondary-container/10 rounded-lg flex items-center justify-center mb-md border border-secondary-container/20">
+<span class="material-symbols-outlined text-secondary">api</span>
+</div>
+<h3 class="font-h3 text-h3 text-on-surface mb-md">Custom API Integrations</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Deep-link Qloqal into your existing ERP, CRM, or custom stack with our GraphQL API and dedicated webhook infrastructure.</p>
+</div>
+<!-- Security Feature -->
+<div class="md:col-span-4 glass-card p-xl rounded-xl">
+<div class="w-12 h-12 bg-error-container/10 rounded-lg flex items-center justify-center mb-md border border-error-container/20">
+<span class="material-symbols-outlined text-error">shield_lock</span>
+</div>
+<h3 class="font-h3 text-h3 text-on-surface mb-sm">Enterprise Security</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">SOC2 Type II, GDPR, and PCI-DSS compliance comes standard. Role-based access control and SSO integration (SAML/OIDC).</p>
+</div>
+<!-- Scalability Feature -->
+<div class="md:col-span-8 glass-card p-xl rounded-xl flex items-center justify-between">
+<div class="max-w-md">
+<h3 class="font-h3 text-h3 text-on-surface mb-sm">Global Scale, Hyperlocal Focus</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Deploy instantly across 140+ countries while maintaining local touchpoints through our distributed edge network.</p>
+</div>
+<div class="hidden lg:block">
+<div class="flex -space-x-4">
+<div class="w-16 h-16 rounded-full border-4 border-surface-container bg-surface flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">public</span>
+</div>
+<div class="w-16 h-16 rounded-full border-4 border-surface-container bg-surface flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary">flash_on</span>
+</div>
+<div class="w-16 h-16 rounded-full border-4 border-surface-container bg-surface flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary">database</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Stats Section -->
+<section class="py-xxl border-y border-white/5 bg-surface-container-lowest">
+<div class="max-w-container-max mx-auto px-gutter grid grid-cols-2 md:grid-cols-4 gap-xl">
+<div class="text-center">
+<div class="text-h1 font-h1 text-primary mb-xs">99.99%</div>
+<div class="font-label-caps text-label-caps text-on-surface-variant">UPTIME SLA</div>
+</div>
+<div class="text-center">
+<div class="text-h1 font-h1 text-primary mb-xs">24/7</div>
+<div class="font-label-caps text-label-caps text-on-surface-variant">DEDICATED TAM</div>
+</div>
+<div class="text-center">
+<div class="text-h1 font-h1 text-primary mb-xs">&lt;50ms</div>
+<div class="font-label-caps text-label-caps text-on-surface-variant">API LATENCY</div>
+</div>
+<div class="text-center">
+<div class="text-h1 font-h1 text-primary mb-xs">140+</div>
+<div class="font-label-caps text-label-caps text-on-surface-variant">CURRENCIES</div>
+</div>
+</div>
+</section>
+<!-- Demo Form Section -->
+<section class="py-xxl bg-background">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="glass-card rounded-xl p-xl md:p-xxl grid md:grid-cols-2 gap-xxl items-center">
+<div>
+<h2 class="font-h2 text-h2 text-on-surface mb-md">Ready to scale your ecosystem?</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-xl">Join hundreds of enterprise leaders who have revolutionized their local commerce operations with Qloqal.</p>
+<ul class="space-y-md">
+<li class="flex items-center gap-md text-on-surface">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+<span class="font-body-md">Custom migration strategy</span>
+</li>
+<li class="flex items-center gap-md text-on-surface">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+<span class="font-body-md">Personalized architecture review</span>
+</li>
+<li class="flex items-center gap-md text-on-surface">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+<span class="font-body-md">Volume-based pricing models</span>
+</li>
+</ul>
+</div>
+<div class="bg-surface-container rounded-xl p-lg border border-white/5">
+<form class="space-y-md">
+<div class="grid grid-cols-2 gap-md">
+<div class="space-y-xs">
+<label class="font-label-caps text-label-caps text-on-surface-variant">FIRST NAME</label>
+<input class="w-full bg-surface-container-low border-outline-variant rounded-lg focus:ring-primary focus:border-primary text-on-surface" type="text"/>
+</div>
+<div class="space-y-xs">
+<label class="font-label-caps text-label-caps text-on-surface-variant">LAST NAME</label>
+<input class="w-full bg-surface-container-low border-outline-variant rounded-lg focus:ring-primary focus:border-primary text-on-surface" type="text"/>
+</div>
+</div>
+<div class="space-y-xs">
+<label class="font-label-caps text-label-caps text-on-surface-variant">WORK EMAIL</label>
+<input class="w-full bg-surface-container-low border-outline-variant rounded-lg focus:ring-primary focus:border-primary text-on-surface" type="email"/>
+</div>
+<div class="space-y-xs">
+<label class="font-label-caps text-label-caps text-on-surface-variant">COMPANY SIZE</label>
+<select class="w-full bg-surface-container-low border-outline-variant rounded-lg focus:ring-primary focus:border-primary text-on-surface">
+<option>100-500 employees</option>
+<option>500-2,000 employees</option>
+<option>2,000+ employees</option>
+</select>
+</div>
+<div class="space-y-xs">
+<label class="font-label-caps text-label-caps text-on-surface-variant">PROJECT DETAILS</label>
+<textarea class="w-full bg-surface-container-low border-outline-variant rounded-lg focus:ring-primary focus:border-primary text-on-surface" rows="3"></textarea>
+</div>
+<button class="w-full bg-primary-container text-on-primary-container font-button py-md rounded-lg active:scale-95 transition-all glow-hover" type="submit">Request Access</button>
+</form>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Shell -->
+<footer class="w-full rounded-t-xl bg-surface-container-lowest dark:bg-surface-container-lowest border-t border-white/5 mt-xxl">
+<div class="flex flex-col md:flex-row justify-between items-center max-w-container-max mx-auto px-gutter py-xl">
+<div class="mb-lg md:mb-0">
+<div class="text-h3 font-h3 font-bold text-on-surface mb-xs">Qloqal</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">© 2024 Qloqal Technologies. All rights reserved.</div>
+</div>
+<div class="flex flex-wrap justify-center gap-md md:gap-xl">
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary underline transition-all duration-300" href="#">Privacy Policy</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary underline transition-all duration-300" href="#">Terms of Service</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary underline transition-all duration-300" href="#">Cookie Policy</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary underline transition-all duration-300" href="#">Contact Support</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary underline transition-all duration-300" href="#">API Documentation</a>
+</div>
+</div>
+</footer>
+</body></html>

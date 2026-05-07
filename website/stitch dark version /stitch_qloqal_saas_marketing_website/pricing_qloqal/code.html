@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Pricing | Qloqal Technologies</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(29, 32, 34, 0.6);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .glow-hover:hover {
+            box-shadow: 0 0 20px rgba(71, 232, 101, 0.15);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-primary-container": "#006420",
+                      "on-secondary-container": "#a6afff",
+                      "on-error": "#690005",
+                      "on-background": "#e0e3e5",
+                      "secondary": "#bcc2ff",
+                      "on-secondary-fixed-variant": "#2234b8",
+                      "tertiary-fixed": "#e3e1ed",
+                      "tertiary": "#e8e6f2",
+                      "surface-bright": "#363a3b",
+                      "primary-container": "#47e865",
+                      "error": "#ffb4ab",
+                      "on-tertiary": "#2f3038",
+                      "on-secondary": "#00179c",
+                      "surface-container-high": "#272a2c",
+                      "inverse-surface": "#e0e3e5",
+                      "surface-tint": "#40e360",
+                      "secondary-container": "#2234b8",
+                      "outline-variant": "#3d4a3b",
+                      "surface-container-highest": "#323537",
+                      "primary-fixed": "#6dff7f",
+                      "on-tertiary-container": "#54555e",
+                      "tertiary-container": "#cbcad5",
+                      "on-secondary-fixed": "#000b63",
+                      "primary-fixed-dim": "#40e360",
+                      "on-surface-variant": "#bbcbb7",
+                      "on-primary-fixed-variant": "#005319",
+                      "surface-dim": "#101415",
+                      "on-primary": "#00390e",
+                      "error-container": "#93000a",
+                      "background": "#101415",
+                      "surface": "#101415",
+                      "surface-container": "#1d2022",
+                      "primary": "#96ff9a",
+                      "on-tertiary-fixed-variant": "#45464f",
+                      "surface-variant": "#323537",
+                      "secondary-fixed-dim": "#bcc2ff",
+                      "inverse-on-surface": "#2d3133",
+                      "on-tertiary-fixed": "#1a1b23",
+                      "inverse-primary": "#006e23",
+                      "secondary-fixed": "#dfe0ff",
+                      "on-error-container": "#ffdad6",
+                      "tertiary-fixed-dim": "#c6c5d0",
+                      "on-surface": "#e0e3e5",
+                      "surface-container-low": "#191c1e",
+                      "surface-container-lowest": "#0b0f10",
+                      "outline": "#869582",
+                      "on-primary-fixed": "#002106"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "gutter": "24px",
+                      "xl": "40px",
+                      "sm": "8px",
+                      "xs": "4px",
+                      "lg": "24px",
+                      "unit": "4px",
+                      "container-max": "1440px",
+                      "xxl": "64px",
+                      "md": "16px"
+              },
+              "fontFamily": {
+                      "h3": ["Plus Jakarta Sans"],
+                      "h1": ["Plus Jakarta Sans"],
+                      "h2": ["Plus Jakarta Sans"],
+                      "button": ["Inter"],
+                      "body-sm": ["Inter"],
+                      "label-caps": ["Inter"],
+                      "body-md": ["Inter"],
+                      "body-lg": ["Inter"]
+              },
+              "fontSize": {
+                      "h3": ["24px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "h1": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "700"}],
+                      "h2": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                      "button": ["14px", {"lineHeight": "1", "fontWeight": "500"}],
+                      "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                      "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                      "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                      "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface selection:bg-primary selection:text-on-primary">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface/80 backdrop-blur-xl border-b border-white/10 shadow-lg shadow-primary/5 h-20">
+<div class="flex justify-between items-center max-w-container-max mx-auto px-gutter h-full">
+<div class="text-h2 font-h2 font-bold text-primary">Qloqal</div>
+<div class="hidden md:flex items-center gap-xl">
+<a class="text-on-surface-variant font-body-md hover:text-primary transition-colors duration-200" href="#">Solutions</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1 transition-colors duration-200" href="#">Pricing</a>
+<a class="text-on-surface-variant font-body-md hover:text-primary transition-colors duration-200" href="#">Enterprise</a>
+<a class="text-on-surface-variant font-body-md hover:text-primary transition-colors duration-200" href="#">Resources</a>
+</div>
+<div class="flex items-center gap-md">
+<button class="text-on-surface font-button px-md py-sm hover:text-primary transition-all">Login</button>
+<button class="bg-primary text-on-primary-container font-button px-lg py-sm rounded-lg active:scale-95 transition-transform hover:shadow-[0_0_15px_rgba(71,232,101,0.3)]">Get Started</button>
+</div>
+</div>
+</nav>
+<main class="pt-32 pb-xxl">
+<!-- Hero Section -->
+<section class="max-w-container-max mx-auto px-gutter text-center mb-xxl">
+<h1 class="font-h1 text-h1 mb-md bg-gradient-to-r from-on-surface to-on-surface-variant bg-clip-text text-transparent">Scale your local impact</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Choose the perfect plan for your operations. From nimble startups to global enterprises, Qloqal powers your hyper-connected future.</p>
+</section>
+<!-- Pricing Cards -->
+<section class="max-w-container-max mx-auto px-gutter grid grid-cols-1 md:grid-cols-3 gap-lg mb-xxl">
+<!-- Starter Plan -->
+<div class="glass-card p-xl rounded-xl flex flex-col glow-hover transition-all duration-300">
+<div class="mb-lg">
+<span class="font-label-caps text-label-caps text-primary mb-sm block">INDIVIDUALS</span>
+<h2 class="font-h2 text-h2 text-on-surface mb-xs">Starter</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Essential tools for local coordination.</p>
+</div>
+<div class="mb-xl">
+<span class="font-h1 text-h1 text-on-surface">$0</span>
+<span class="font-body-md text-body-md text-on-surface-variant">/month</span>
+</div>
+<ul class="space-y-md mb-xl flex-grow">
+<li class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+<span class="font-body-sm text-body-sm">Up to 3 active projects</span>
+</li>
+<li class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+<span class="font-body-sm text-body-sm">Basic analytics dashboard</span>
+</li>
+<li class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+<span class="font-body-sm text-body-sm">Community support</span>
+</li>
+</ul>
+<button class="w-full py-md px-lg border border-outline hover:bg-surface-variant text-on-surface rounded-lg font-button transition-all">Get Started</button>
+</div>
+<!-- Growth Plan -->
+<div class="glass-card p-xl rounded-xl flex flex-col relative border-primary/50 shadow-2xl shadow-primary/10 glow-hover transition-all duration-300 transform md:-translate-y-4">
+<div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-on-primary-container px-lg py-xs rounded-full font-label-caps text-label-caps font-bold">
+                    MOST POPULAR
+                </div>
+<div class="mb-lg pt-4">
+<span class="font-label-caps text-label-caps text-primary mb-sm block">TEAMS</span>
+<h2 class="font-h2 text-h2 text-on-surface mb-xs">Growth</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Advanced scaling for growing hubs.</p>
+</div>
+<div class="mb-xl">
+<span class="font-h1 text-h1 text-on-surface">$49</span>
+<span class="font-body-md text-body-md text-on-surface-variant">/month</span>
+</div>
+<ul class="space-y-md mb-xl flex-grow">
+<li class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+<span class="font-body-sm text-body-sm">Unlimited active projects</span>
+</li>
+<li class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+<span class="font-body-sm text-body-sm">Real-time collaboration</span>
+</li>
+<li class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+<span class="font-body-sm text-body-sm">Advanced ML reporting</span>
+</li>
+<li class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+<span class="font-body-sm text-body-sm">Priority email support</span>
+</li>
+</ul>
+<button class="w-full py-md px-lg bg-primary text-on-primary-container rounded-lg font-button font-bold hover:shadow-[0_0_20px_rgba(71,232,101,0.4)] transition-all">Get Started</button>
+</div>
+<!-- Enterprise Plan -->
+<div class="glass-card p-xl rounded-xl flex flex-col glow-hover transition-all duration-300">
+<div class="mb-lg">
+<span class="font-label-caps text-label-caps text-primary mb-sm block">GLOBAL</span>
+<h2 class="font-h2 text-h2 text-on-surface mb-xs">Enterprise</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Custom infrastructure for large scale.</p>
+</div>
+<div class="mb-xl">
+<span class="font-h1 text-h1 text-on-surface">Custom</span>
+</div>
+<ul class="space-y-md mb-xl flex-grow">
+<li class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+<span class="font-body-sm text-body-sm">Custom API integrations</span>
+</li>
+<li class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+<span class="font-body-sm text-body-sm">SLA &amp; Dedicated manager</span>
+</li>
+<li class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+<span class="font-body-sm text-body-sm">Multi-tenant architecture</span>
+</li>
+</ul>
+<button class="w-full py-md px-lg border border-outline hover:bg-surface-variant text-on-surface rounded-lg font-button transition-all">Contact Sales</button>
+</div>
+</section>
+<!-- Comparison Table Section -->
+<section class="max-w-container-max mx-auto px-gutter mb-xxl">
+<h2 class="font-h2 text-h2 text-center mb-xl">Feature Comparison</h2>
+<div class="overflow-hidden rounded-xl border border-white/10 bg-surface-container-lowest">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-high">
+<th class="p-lg font-label-caps text-label-caps text-on-surface-variant">FEATURE</th>
+<th class="p-lg font-label-caps text-label-caps text-on-surface-variant">STARTER</th>
+<th class="p-lg font-label-caps text-label-caps text-on-surface-variant">GROWTH</th>
+<th class="p-lg font-label-caps text-label-caps text-on-surface-variant">ENTERPRISE</th>
+</tr>
+</thead>
+<tbody class="font-body-sm text-body-sm divide-y divide-white/5">
+<tr>
+<td class="p-lg font-bold">Project Management</td>
+<td class="p-lg">3 active</td>
+<td class="p-lg">Unlimited</td>
+<td class="p-lg">Unlimited</td>
+</tr>
+<tr>
+<td class="p-lg font-bold">API Access</td>
+<td class="p-lg text-on-surface-variant">Read-only</td>
+<td class="p-lg">Full access</td>
+<td class="p-lg">High-rate limit</td>
+</tr>
+<tr>
+<td class="p-lg font-bold">SSO &amp; Security</td>
+<td class="p-lg text-on-surface-variant">—</td>
+<td class="p-lg text-on-surface-variant">—</td>
+<td class="p-lg">SAML / OIDC</td>
+</tr>
+<tr>
+<td class="p-lg font-bold">Analytics</td>
+<td class="p-lg">Daily reports</td>
+<td class="p-lg">Real-time</td>
+<td class="p-lg">Custom BI export</td>
+</tr>
+<tr>
+<td class="p-lg font-bold">User Roles</td>
+<td class="p-lg">Admin only</td>
+<td class="p-lg">Basic RBAC</td>
+<td class="p-lg">Granular RBAC</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- FAQ Section -->
+<section class="max-w-3xl mx-auto px-gutter mb-xxl">
+<h2 class="font-h2 text-h2 text-center mb-xl">Common Questions</h2>
+<div class="space-y-md">
+<div class="glass-card rounded-xl p-lg">
+<button class="flex justify-between items-center w-full text-left">
+<span class="font-h3 text-h3">Can I change plans later?</span>
+<span class="material-symbols-outlined text-primary">expand_more</span>
+</button>
+<div class="mt-md font-body-md text-on-surface-variant">
+                        Yes, you can upgrade or downgrade your plan at any time. Changes will be reflected in your next billing cycle.
+                    </div>
+</div>
+<div class="glass-card rounded-xl p-lg">
+<button class="flex justify-between items-center w-full text-left">
+<span class="font-h3 text-h3">What forms of payment do you accept?</span>
+<span class="material-symbols-outlined text-primary">expand_more</span>
+</button>
+<div class="mt-md font-body-md text-on-surface-variant">
+                        We accept all major credit cards, PayPal, and wire transfers for Enterprise customers.
+                    </div>
+</div>
+<div class="glass-card rounded-xl p-lg">
+<button class="flex justify-between items-center w-full text-left">
+<span class="font-h3 text-h3">Is there a free trial for the Growth plan?</span>
+<span class="material-symbols-outlined text-primary">expand_more</span>
+</button>
+<div class="mt-md font-body-md text-on-surface-variant">
+                        We offer a 14-day full-feature trial for the Growth plan. No credit card required to start.
+                    </div>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="max-w-container-max mx-auto px-gutter">
+<div class="relative overflow-hidden rounded-xxl p-xxl text-center bg-surface-container-high border border-white/10">
+<div class="absolute inset-0 opacity-10 pointer-events-none">
+<img class="w-full h-full object-cover" data-alt="A sleek and modern abstract background featuring high-tech glowing geometric lines and neon green light trails flowing through a dark, deep blue digital space. The image evokes a sense of speed, connectivity, and advanced networking infrastructure. Subtle bokeh effects and soft light refractions create a premium, immersive digital environment that aligns with a cutting-edge software company's aesthetic." src="https://lh3.googleusercontent.com/aida/ADBb0uiusoZ4A5zyf0YNHkCfOGQID81xS7ein9vH52_yBEUQa9Pry9bN-DzKcJdWsvBDp9IedZCwoiDuxnOVbWEaUAP3liQGEV-BDmneIExe0Sbg27NY2sBsWZcUKWEKaJLN6SgNK_HQBXY7hy4HsBoAGi4x-WB1Ugl7iGNGB1G3Kaenzq_Ym6-OvItAW3biVYxQJ4tz-wpZPsGxQFE8cOzXvtAbXpqWbWjCbEoby1sozkV5Cmc8nci9bv3IPbE"/>
+</div>
+<div class="relative z-10">
+<h2 class="font-h1 text-h1 mb-md">Ready to optimize your local network?</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-xl max-w-xl mx-auto">Join thousands of teams using Qloqal to bridge the gap between global strategy and local execution.</p>
+<div class="flex flex-col sm:flex-row gap-md justify-center">
+<button class="bg-primary text-on-primary-container px-xxl py-md rounded-lg font-button font-bold text-lg active:scale-95 transition-transform">Get Started Now</button>
+<button class="border border-outline px-xxl py-md rounded-lg font-button text-lg hover:bg-white/5 active:scale-95 transition-transform">Book a Demo</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full rounded-t-xl bg-surface-container-lowest dark:bg-surface-container-lowest border-t border-white/5">
+<div class="flex flex-col md:flex-row justify-between items-center max-w-container-max mx-auto px-gutter py-xl">
+<div class="mb-xl md:mb-0 text-center md:text-left">
+<div class="text-h3 font-h3 font-bold text-on-surface mb-sm">Qloqal</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-xs">
+                    Building the infrastructure for the hyper-local future of work and commerce.
+                </p>
+</div>
+<div class="flex flex-wrap justify-center gap-lg mb-xl md:mb-0">
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary underline transition-all duration-300" href="#">Privacy Policy</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary underline transition-all duration-300" href="#">Terms of Service</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary underline transition-all duration-300" href="#">Cookie Policy</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary underline transition-all duration-300" href="#">Contact Support</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary underline transition-all duration-300" href="#">API Documentation</a>
+</div>
+<div class="text-center md:text-right">
+<p class="font-body-sm text-body-sm text-on-surface-variant">© 2024 Qloqal Technologies. All rights reserved.</p>
+<div class="flex gap-md mt-sm justify-center md:justify-end">
+<span class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer">language</span>
+<span class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer">share</span>
+</div>
+</div>
+</div>
+</footer>
+</body></html>
