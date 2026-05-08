@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Qloqal | Run Your Shop on WhatsApp</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "tertiary": "#845332",
+                      "surface-tint": "#006e23",
+                      "on-primary": "#ffffff",
+                      "surface-bright": "#f3fced",
+                      "primary-fixed": "#6dff7f",
+                      "inverse-on-surface": "#eaf4e5",
+                      "on-tertiary-container": "#7a4a2a",
+                      "inverse-primary": "#40e360",
+                      "on-background": "#151e15",
+                      "on-primary-container": "#006420",
+                      "error-container": "#ffdad6",
+                      "on-tertiary-fixed-variant": "#683c1d",
+                      "on-secondary-container": "#fffbff",
+                      "surface-container-highest": "#dce5d7",
+                      "on-surface": "#151e15",
+                      "outline": "#6c7b69",
+                      "tertiary-fixed": "#ffdbc8",
+                      "on-tertiary-fixed": "#321300",
+                      "on-primary-fixed-variant": "#005319",
+                      "surface": "#f3fced",
+                      "surface-dim": "#d3ddce",
+                      "surface-container-high": "#e1ebdc",
+                      "on-error-container": "#93000a",
+                      "secondary-fixed": "#dfe0ff",
+                      "secondary": "#3c4dcd",
+                      "on-surface-variant": "#3d4a3b",
+                      "on-primary-fixed": "#002106",
+                      "primary": "#006e23",
+                      "primary-fixed-dim": "#40e360",
+                      "secondary-container": "#5767e8",
+                      "surface-container-low": "#edf7e7",
+                      "surface-container-lowest": "#ffffff",
+                      "background": "#f3fced",
+                      "primary-container": "#47e865",
+                      "outline-variant": "#bbcbb7",
+                      "inverse-surface": "#2a3329",
+                      "on-tertiary": "#ffffff",
+                      "tertiary-fixed-dim": "#fab891",
+                      "error": "#ba1a1a",
+                      "secondary-fixed-dim": "#bcc2ff",
+                      "on-error": "#ffffff",
+                      "surface-container": "#e7f1e2",
+                      "surface-variant": "#dce5d7",
+                      "on-secondary-fixed-variant": "#2234b8",
+                      "on-secondary": "#ffffff",
+                      "tertiary-container": "#ffbd95",
+                      "on-secondary-fixed": "#000b63"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "gutter": "24px",
+                      "container-max-width": "1280px",
+                      "desktop-padding": "96px",
+                      "scale": "{'xs': '4px', 'sm': '8px', 'md': '16px', 'lg': '24px', 'xl': '32px', 'xxl': '48px', 'huge': '96px'}"
+              },
+              "fontFamily": {
+                      "h2": ["Plus Jakarta Sans"],
+                      "h1": ["Plus Jakarta Sans"],
+                      "body-sm": ["Inter"],
+                      "h3": ["Plus Jakarta Sans"],
+                      "body-lg": ["Inter"],
+                      "label": ["Inter"],
+                      "body-md": ["Inter"]
+              },
+              "fontSize": {
+                      "h2": ["36px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                      "h1": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                      "body-sm": ["14px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                      "h3": ["24px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                      "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "label": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                      "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        .glow-gradient {
+            background: linear-gradient(135deg, #006e23 0%, #3c4dcd 100%);
+        }
+        .card-shadow {
+            box-shadow: 0px 4px 20px rgba(14, 19, 48, 0.05);
+        }
+        .card-shadow-hover:hover {
+            box-shadow: 0px 8px 30px rgba(14, 19, 48, 0.1);
+        }
+        .glass-nav {
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: -1;
+            opacity: 0.15;
+        }
+    </style>
+</head>
+<body class="bg-surface font-body-md text-on-surface">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 glass-nav shadow-sm">
+<div class="max-w-[1280px] mx-auto px-gutter lg:px-desktop-padding flex justify-between items-center h-20">
+<div class="font-h3 text-h3 font-extrabold text-primary flex items-center gap-2">
+                Qloqal
+            </div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-body-md text-body-md text-secondary font-bold border-b-2 border-secondary" href="#">For Vendors</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">For Customers</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">How it Works</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Pricing</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Customers</a>
+</div>
+<button class="bg-primary text-on-primary px-6 py-2.5 rounded-full font-label tracking-wide hover:scale-95 transition-transform">
+                Start selling
+            </button>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="relative pt-40 pb-24 overflow-hidden bg-surface-container-lowest">
+<div class="orb w-[500px] h-[500px] bg-primary top-[-100px] left-[-100px]"></div>
+<div class="orb w-[400px] h-[400px] bg-secondary bottom-[-50px] right-[-50px]"></div>
+<div class="max-w-[1280px] mx-auto px-gutter lg:px-desktop-padding text-center">
+<h1 class="font-h1 text-[64px] leading-tight mb-6 max-w-4xl mx-auto">
+                Run your shop online. Take every order on <span class="text-secondary">WhatsApp</span>. That's it.
+            </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-10">
+                Qloqal turns any small business into a high-converting online shop. Manage your catalog, take payments, and keep your customers happy where they already are.
+            </p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+<button class="glow-gradient text-on-primary px-8 py-4 rounded-full font-h3 text-body-md shadow-lg hover:scale-105 transition-transform">
+                    Start selling
+                </button>
+<button class="border-[1.5px] border-secondary text-secondary px-8 py-4 rounded-full font-h3 text-body-md hover:bg-secondary/5 transition-colors">
+                    See it in action
+                </button>
+</div>
+</div>
+</section>
+<!-- Showcase Strip -->
+<section class="py-12 bg-surface-container-lowest">
+<div class="max-w-[1280px] mx-auto px-gutter lg:px-desktop-padding">
+<div class="grid grid-cols-2 md:grid-cols-5 gap-6">
+<div class="bg-surface-container-low p-6 rounded-[24px] card-shadow text-center">
+<span class="material-symbols-outlined text-primary mb-3" style="font-size: 32px;">browser_updated</span>
+<p class="font-label text-on-surface">Live orders</p>
+</div>
+<div class="bg-surface-container-low p-6 rounded-[24px] card-shadow text-center border-2 border-secondary/20">
+<span class="material-symbols-outlined text-secondary mb-3" style="font-size: 32px;">chat</span>
+<p class="font-label text-on-surface">WhatsApp accept</p>
+</div>
+<div class="bg-surface-container-low p-6 rounded-[24px] card-shadow text-center">
+<span class="material-symbols-outlined text-primary mb-3" style="font-size: 32px;">smartphone</span>
+<p class="font-label text-on-surface">Customer app</p>
+</div>
+<div class="bg-surface-container-low p-6 rounded-[24px] card-shadow text-center">
+<span class="material-symbols-outlined text-primary mb-3" style="font-size: 32px;">payments</span>
+<p class="font-label text-on-surface">Payments</p>
+</div>
+<div class="bg-surface-container-low p-6 rounded-[24px] card-shadow text-center">
+<span class="material-symbols-outlined text-primary mb-3" style="font-size: 32px;">insights</span>
+<p class="font-label text-on-surface">Insights</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Stats Banner -->
+<section class="bg-surface-bright py-20">
+<div class="max-w-[1280px] mx-auto px-gutter lg:px-desktop-padding">
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-12 text-center">
+<div>
+<h2 class="font-h1 text-primary mb-2">6+</h2>
+<p class="font-body-md text-on-surface-variant">Categories</p>
+</div>
+<div>
+<h2 class="font-h1 text-primary mb-2">10 min</h2>
+<p class="font-body-md text-on-surface-variant">Setup time</p>
+</div>
+<div>
+<h2 class="font-h1 text-primary mb-2">3 taps</h2>
+<p class="font-body-md text-on-surface-variant">Per order</p>
+</div>
+<div>
+<h2 class="font-h1 text-primary mb-2">0 apps</h2>
+<p class="font-body-md text-on-surface-variant">For customers</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Use-case Grid -->
+<section class="py-24 bg-surface-container-lowest">
+<div class="max-w-[1280px] mx-auto px-gutter lg:px-desktop-padding">
+<h2 class="font-h2 text-h2 mb-12 text-center">If they sell, Qloqal works.</h2>
+<div class="grid grid-cols-2 md:grid-cols-5 gap-6">
+<!-- Tiles -->
+<div class="relative h-64 rounded-[24px] overflow-hidden group">
+<img alt="Grocery" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A lush and vibrant grocery store display featuring fresh produce, crisp green vegetables, and bright red tomatoes under warm, inviting overhead lighting. The atmosphere is bustling and local, with a clean and professional SaaS aesthetic that highlights quality and freshness in a hyperlocal marketplace context." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOctJmJ3HewAKST0ZsGhhX3gBVL1rw2A00g4O7Y_GH9rgzYPew6HgWyBnp82wqlN5g8UbxsFwzDQBHyE-bfObORsFCKgcPV7JJ9k7N_OUK09ZfkexpYFbpaE0wkIlGUBHyBlDjVuSpDDLECtIidMSQXjzNboRd5o4krMWHXmgVwrUkbMA_HU5OpRoIBV107eJ1Jy-Bvd-Z1oiQ4Fxj0RHLTl9C5kITti-9NVA0ghC1PaBzD1Fp3vlQXSOBFJJ32sYrwN-CMZWhEOUq"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6">
+<span class="text-on-primary font-h3">Grocery</span>
+</div>
+</div>
+<div class="relative h-64 rounded-[24px] overflow-hidden group">
+<img alt="Bakery" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A warm and inviting bakery scene with golden-brown sourdough loaves and flaky croissants arranged on rustic wooden shelves. Soft morning sunlight filters through a window, creating a serene and appetizing ambiance. The image uses a clean, high-contrast palette typical of a modern SaaS interface for local businesses." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB97POoRXw8L-9SH-QURSsrRVbgxN-__UKQb9mLpjcFAnGhW_NruGk23ec39urEOpdIROHAtcR9KNui4B-H2kmt9kJj_966NDRt5fIcyWW9LDR-Sz1DvNRPrgDbqXJ98RLqs6hCkd4mb5SH9WQCzb7l3sSzbEi95kfNxkBTvYpIms_e91Vo8X8iSjslVSNXBiu8ytHjpc-2XPD20pnZf3JF3zeuqlNQueSIDVJm5F1mPmFKTR3Uc1SfQAeudQQ_6qcUnf1pVJYNvlTN"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6">
+<span class="text-on-primary font-h3">Bakery</span>
+</div>
+</div>
+<div class="relative h-64 rounded-[24px] overflow-hidden group">
+<img alt="Pharmacy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A modern and clean pharmacy interior with neatly organized medicine bottles on pristine white shelves. The lighting is bright and clinical but welcoming, emphasizing trust and professionalism. The aesthetic is minimalist with subtle green accents that align with a digital health and commerce platform." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAr1duoB3qsQvbOLMPAdhg0-EgB4XT5gxMOVjgBcu73l5PfDelfB9b28g2o1kCS6QUphBb0Kuc84pksoDGj-XIduQc4xzKf6UvaqnVItk2W324Mz4JSlUPEk0jEQmtiEQOoIhpSc-Zsrt3N7UXWzNK5gvZD4yoQUR6FQUAwX2RjyvbkvRMlGp9Pi00hX1lSqV6GGx1eC1KamQ5qExn3A0va4YfkiOWVmelFYcWM6EbajmvetqaUFF-qv4gIxiHGfOCpuqFeIgkf2-14"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6">
+<span class="text-on-primary font-h3">Pharmacy</span>
+</div>
+</div>
+<div class="relative h-64 rounded-[24px] overflow-hidden group">
+<img alt="Clothing" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A stylish boutique clothing display with high-end fabrics and modern fashion pieces on minimalist racks. The setting is a bright, airy retail space with a high-key lighting scheme. The colors are neutral with vibrant pops of fabric, suggesting a premium, scalable hyperlocal commerce experience." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBAxTKF1g4dgb8E-b1gCN_CyELWmMS4BcR28hUfAluNmJvTnPlJrfOHcGG9InrNqGWFiCU4Fjd25_ygq28uGncWdZUJRk4_eBq3hsSqOSVxWFQOTLjOI8OyDRqMZ4r1SKd18H6fUX92cfaYGUoH4SQUTlevCoM11R3rb3zQsqKcp1YnPkCbOEZ5lhS-fBBt0LLR0j4gdydvTeDTrHaFgVkr9zVhQXMV0vpF8Ce3ZpRbTVEmOyLLWzHb_lPjg7fxk0gsfOTllgr6d_6"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6">
+<span class="text-on-primary font-h3">Clothing</span>
+</div>
+</div>
+<div class="relative h-64 rounded-[24px] overflow-hidden group">
+<img alt="Hardware" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A well-organized hardware store aisle with tools and supplies neatly displayed. The lighting is strong and industrial yet clear and accessible. The image communicates reliability and variety, maintaining a professional commerce-focused visual style with sharp details and geometric order." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjzCqNILD-ws1NEL9vLF9PLF_G5Eu4QzEZSIYUoNggiY0OMRSkwPKqSweinxwvpDThpkPEn-qT9LAsFRUCrsgX7ksW0eAMkgnLUfTajQewrJAr3H-pA3eLe4Gwmu3pwfco3kXkmkZk7Im-OnAveSBGHmoqOVcZSvfuy3LzYSaOFOXSzsuyGge0njW8sxdeygrkfH4APSF5TLzefmWVWr48hcb3EkNCstqO9_9a5RnRkzAmstxd1ll1OrDzfniz0GRASoKtzYPieZIc"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6">
+<span class="text-on-primary font-h3">Hardware</span>
+</div>
+</div>
+<div class="relative h-64 rounded-[24px] overflow-hidden group">
+<img alt="Electronics" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A sleek electronics display featuring the latest gadgets and devices in a high-tech showroom. The lighting is cool and modern with blue undertones, creating a sophisticated SaaS-driven environment. Every product is positioned with precision to evoke high performance and digital innovation." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhV8Xxzz_TXc1-y_9N8DHsF3tNQyYnHggY1eluWfKOUpBl2JgT5PV-aECjO-UcACse41Ie5w9ioGVCKAluYpu5jx-LaC16R8V6pQFsNn1hDXDqFIzv-tzc1nZXoQIXmgfqfyRXFrnhhTHYuhYq2bVzCeLITJ6v62abMwDYHpX-V0ZBte4TadYnNP2DWJ6CtwpXcXzl-Pd42dSig5teobTtXF8YXuW8BgnOkJoNw0Gl_rGn1ZZaNrxJ2kRfuSeSfYmZLM437AACxEau"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6">
+<span class="text-on-primary font-h3">Electronics</span>
+</div>
+</div>
+<div class="relative h-64 rounded-[24px] overflow-hidden group">
+<img alt="Restaurant" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A beautifully plated dish in a cozy and modern restaurant setting. The background is softly blurred to focus on the vibrant culinary details. The mood is warm and inviting, using rich colors and soft shadows to portray a high-end hyperlocal dining experience managed through a digital platform." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWurGrnLV3x9QVvB1_V08x-MjxSJHmFcl0Pw2fJ6Vn7w8bXVjYFzlCiJKItYEtiQ6F_BL2eUVD9m-g2hM9UCFYlG4eh4nI2M2xvMIqvo3YLULkas_X7IquOQ0lGDb52bInO_f_6ZTxiph5pQgMltAqqjRUBnpzdSj55s11_LkQkfRj2B1jCi4Q43IV9tjGPpz0ADzUNDTprXxCWT4W3JBk0f-RzC1aOdwM270dI6ktyW1gHnnbdn-KSCJg2uvtZoiyXwZwkfTN6oLg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6">
+<span class="text-on-primary font-h3">Restaurant</span>
+</div>
+</div>
+<div class="relative h-64 rounded-[24px] overflow-hidden group">
+<img alt="Lifestyle" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A curated lifestyle shop with artisanal products and minimalist decor. The lighting is soft and natural, creating a sense of local community and discovery. The aesthetic is clean and focused, reflecting the user-friendly and reliable nature of the commerce platform." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaw6EcD9goe9CqsRceKDCoZQLb4GGp-vioJ_IuitR2Q0Dc-w-y2-kiqD0NjaJajONzyL-wi_1PAkq0PVSnQNQ0qfgoro0NQDfzkhmvjDldJ4yUgj8pYKsLfr82EX2VJbrvxrzu6N6liQLgAH54QdjMNaUd40Cpi44obhBHKbJdul7Cp1jbJdmhJMIAOgAGqS8RRq8UCc3bTpKNePWoSH4OBj56DTByqT9-H-jqnszMOO1tPIkbLmz36CTfCn_iBs3Y4rBalTojuEcS"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6">
+<span class="text-on-primary font-h3">Lifestyle</span>
+</div>
+</div>
+<div class="relative h-64 rounded-[24px] overflow-hidden group">
+<img alt="Home Decor" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="An elegant home decor display with modern furniture and artistic accents. The room is flooded with bright, high-key light, emphasizing space and clarity. The color palette is sophisticated and modern, fitting perfectly with a confident SaaS platform identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWUtFHsliH_xJSquvjqSQK6ZSrdKCRxScrxWm9omBtGAJSyet1dlvd3lMO3HCVcP80zxkYuL2dzA7fz19TbAptWnFxuj0b6a4BtZJGybLlzWBRuByM1dpjJwj-0LUViavyzF68CH-ltuXfM0v0dKdJxmpbavawzweK-vxpGDJC0Mv_hmqBRSD8c5dx6zJWTmguFzJ_MmYE-PRqN9KKsp1aPv71zEjegce290FPA9LrdOnrZOjZFXF5vuKtbV6ISArHF36UOIi9UNIk"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6">
+<span class="text-on-primary font-h3">Decor</span>
+</div>
+</div>
+<div class="relative h-64 rounded-[24px] overflow-hidden group">
+<img alt="Vegetables" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A farmers market stall overflowing with fresh, colorful vegetables under bright daylight. The scene is vibrant and full of life, capturing the essence of hyperlocal commerce. The image focus is sharp, reinforcing the reliability and trust of the digital storefront platform." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-TQQ-nt47zX31FYPyIM6uL5JuDmunnP6_of9AGS7OWTCWoI41XNGQPJH309xqEvVvs4Qc6Xt-C1gzYrqlwRMI-S2ki8ovUlKMHUwTGNfgf50BhpQwPUl8JO7LBW00adoYfrb-FJRrbKcjxkkawshoLg4tbWubXdn6BB_Z3NFiAJMODmc9XOCzv6wY5x4noVGf4vIdUndArHO7ynzjP_ePr0waQtNdvV_77DTohSyRix7XpxNM-GBEaPEicSuEpQDbpfNw7_k-y9FW"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6">
+<span class="text-on-primary font-h3">Market</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Tabbed Feature Explorer -->
+<section class="py-24 bg-surface">
+<div class="max-w-[1280px] mx-auto px-gutter lg:px-desktop-padding">
+<div class="flex flex-wrap justify-center gap-4 mb-16">
+<button class="bg-primary text-on-primary px-8 py-3 rounded-full font-label shadow-lg">Orders</button>
+<button class="bg-surface-container text-on-surface-variant px-8 py-3 rounded-full font-label hover:bg-surface-container-high transition-colors">Catalog</button>
+<button class="bg-surface-container text-on-surface-variant px-8 py-3 rounded-full font-label hover:bg-surface-container-high transition-colors">Payments</button>
+<button class="bg-surface-container text-on-surface-variant px-8 py-3 rounded-full font-label hover:bg-surface-container-high transition-colors">Customers</button>
+<button class="bg-surface-container text-on-surface-variant px-8 py-3 rounded-full font-label hover:bg-surface-container-high transition-colors">Insights</button>
+</div>
+<div class="bg-surface-container-lowest rounded-[24px] card-shadow overflow-hidden border border-outline-variant/30 flex flex-col md:flex-row items-center">
+<div class="md:w-1/2 p-12">
+<h3 class="font-h2 text-h2 mb-4">Never miss an order again.</h3>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8">
+                        Real-time order management dashboard that works across all devices. Get instant notifications and manage everything from a single browser tab.
+                    </p>
+<ul class="space-y-4">
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+<span class="font-body-md">Instant sound alerts for new orders</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+<span class="font-body-md">One-click status updates</span>
+</li>
+</ul>
+</div>
+<div class="md:w-1/2 bg-surface-container-high p-8">
+<div class="rounded-xl overflow-hidden shadow-2xl border-4 border-white">
+<img alt="Dashboard" class="w-full" data-alt="A modern and clean web application dashboard showing a list of recent orders with status badges in green and blue. The interface is sleek with generous whitespace, crisp typography, and soft ambient shadows. It reflects a high-performance SaaS platform for small businesses, designed with a focus on usability and professional aesthetics." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhQL4t_S6uP7VsNCs9l7YqG-P6Ydrh6PH-RSM46YTUC5GJFwK8hDNW0k-qMGMNnF4C_jt7ONS3itbyqBH0hgieiKI1U-W06Fhj2VsuuDNDMF61Rmku1c7WzDWx55cQmMiio08OooVQsYnkRyWNZhkq6z1oABStyJq0T4BI-xN4Rzz76UrFa8DkWzzYr--ELqiVmayGBH4oelXjKapA9SuHZxVtcTkxMYNmBIYKFYWQ0z0FJfPnlh9vyS1p2fl4ku82npAAWJyk7k6B"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Alternating Rows -->
+<section class="py-24 bg-surface-container-lowest">
+<div class="max-w-[1280px] mx-auto px-gutter lg:px-desktop-padding space-y-32">
+<!-- Row 1 -->
+<div class="flex flex-col md:flex-row items-center gap-20">
+<div class="md:w-1/2">
+<div class="relative max-w-[300px] mx-auto">
+<div class="bg-secondary rounded-[32px] p-4 card-shadow">
+<img class="rounded-[24px] mb-4" data-alt="A smartphone screen displaying a WhatsApp chat interface where a customer is successfully placing an order for fresh groceries. The chat bubbles are clean and easy to read, set against a bright, modern light-mode background. The scene conveys ease of use and seamless communication in a professional commerce setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdDKjdPESsz9n5DM18ug82FKwwjPt7Jguwe8-Dgs22FYy_qNoVdSE2I1FlCEM83FOExgQcQ2ljuS049r1UkddPQ4EkT5Qbo4zFL7xRmLBaVDJ0BJyrB4d54WyOL0ylUYp-NCcyB3ac4nwIyFkPUrN8y_PUAXuWQQDOZzdtK3Efo0lcBqzcROGkeBAZWruXhqO61-X97dAtSHzqlgaLeh1W7iJVfpKOwccLUEfgHLoVByiu8_IIX90ZsNG0FuBNdvnv6LEEt3gmSQ_p"/>
+<div class="bg-white/10 p-3 rounded-xl text-white text-sm">
+                                "Order confirmed! We're preparing your delivery."
+                            </div>
+</div>
+</div>
+</div>
+<div class="md:w-1/2">
+<h2 class="font-h2 text-h2 mb-6">Chat that converts.</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+                        Stop juggling between apps. Qloqal integrates directly with WhatsApp, letting you turn conversations into transactions without ever leaving the chat window.
+                    </p>
+</div>
+</div>
+<!-- Row 2 -->
+<div class="flex flex-col md:flex-row-reverse items-center gap-20">
+<div class="md:w-1/2">
+<div class="bg-surface-container rounded-[24px] p-4 card-shadow border border-outline-variant/30">
+<img class="rounded-xl" data-alt="A high-fidelity mockup of an online product catalog on a laptop screen, featuring high-quality images of artisanal bakery items. The layout is a clean grid with bold pricing and clear call-to-action buttons. The design is modern, professional, and optimized for high conversion in a SaaS environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3XZ_GoPFvlxkiCKYdfYH3NsICf3TR-t1g06Zrtf-0h9v6FIL2nJnhQ_DL-BpcQ49nkNONkdJueFzzNPJdJP3l8_vSkqsWm6aoTXPiIGhoLZBmcAgq8xrQTi06jO_0nKPrtwij1tQWMtP6Iq0sOOG_ebFq5G7QbQMmkj1BnFRkMKFrGbelQtSKLylHdwlw5XBbMA3yfzZIEPNj82ZiG1OcXBVJVsdgZzwTo-1HC9lTFvYhmRgtrPHGdE7JCqwPnPdxrUtG88eLSmLn"/>
+</div>
+</div>
+<div class="md:w-1/2">
+<h2 class="font-h2 text-h2 mb-6">Your catalog, elevated.</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+                        Upload products in bulk or one by one. Our lightning-fast catalog helps customers find exactly what they need in seconds, with zero lag and beautiful visuals.
+                    </p>
+</div>
+</div>
+<!-- Row 3 -->
+<div class="flex flex-col md:flex-row items-center gap-20">
+<div class="md:w-1/2">
+<div class="bg-primary/5 rounded-[24px] p-8 card-shadow border border-primary/20">
+<div class="flex flex-col gap-4">
+<div class="bg-white p-4 rounded-xl shadow-sm flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+<span class="font-body-md font-bold">Payment Received</span>
+</div>
+<span class="text-primary font-bold">$124.50</span>
+</div>
+<div class="bg-white p-4 rounded-xl shadow-sm flex items-center justify-between opacity-60">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-outline">pending</span>
+<span class="font-body-md">Pending Verification</span>
+</div>
+<span class="text-on-surface-variant">$45.00</span>
+</div>
+</div>
+</div>
+</div>
+<div class="md:w-1/2">
+<h2 class="font-h2 text-h2 mb-6">Seamless payments.</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+                        Support for all major local and international payment methods. Secure, fast, and directly tied to your WhatsApp orders for easy reconciliation.
+                    </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Why WhatsApp -->
+<section class="py-24 bg-surface-bright">
+<div class="max-w-[1280px] mx-auto px-gutter lg:px-desktop-padding">
+<div class="flex flex-col md:flex-row gap-20">
+<div class="md:w-1/2">
+<div class="sticky top-32">
+<div class="relative max-w-[320px] mx-auto">
+<div class="bg-[#25D366] p-6 rounded-[40px] card-shadow border-8 border-white">
+<div class="flex items-center gap-3 mb-6">
+<div class="w-10 h-10 rounded-full bg-white/20"></div>
+<div class="h-4 w-24 bg-white/30 rounded-full"></div>
+</div>
+<div class="space-y-4">
+<div class="bg-white p-4 rounded-2xl rounded-tl-none shadow-sm max-w-[80%]">
+<p class="text-sm">Hi! Can I order the organic honey?</p>
+</div>
+<div class="bg-[#dcf8c6] p-4 rounded-2xl rounded-tr-none shadow-sm ml-auto max-w-[80%]">
+<p class="text-sm">Sure! Here is the checkout link for you.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md:w-1/2">
+<h2 class="font-h2 text-h2 mb-12">Why WhatsApp?</h2>
+<div class="space-y-8">
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary flex-shrink-0">groups</span>
+<div>
+<h4 class="font-h3 text-body-lg mb-2">High Trust</h4>
+<p class="font-body-md text-on-surface-variant">Customers feel safer chatting with real people.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary flex-shrink-0">speed</span>
+<div>
+<h4 class="font-h3 text-body-lg mb-2">Instant Reach</h4>
+<p class="font-body-md text-on-surface-variant">Notifications that actually get read immediately.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary flex-shrink-0">install_mobile</span>
+<div>
+<h4 class="font-h3 text-body-lg mb-2">Zero Friction</h4>
+<p class="font-body-md text-on-surface-variant">No new apps for customers to download.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary flex-shrink-0">autorenew</span>
+<div>
+<h4 class="font-h3 text-body-lg mb-2">Auto-pilot</h4>
+<p class="font-body-md text-on-surface-variant">Automated order routing and receipts.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary flex-shrink-0">public</span>
+<div>
+<h4 class="font-h3 text-body-lg mb-2">Works Everywhere</h4>
+<p class="font-body-md text-on-surface-variant">Perfect for areas with low bandwidth.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary flex-shrink-0">trending_up</span>
+<div>
+<h4 class="font-h3 text-body-lg mb-2">Repeat Sales</h4>
+<p class="font-body-md text-on-surface-variant">Easily re-engage past customers via chat.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Pricing Teaser -->
+<section class="py-24 bg-surface-container-lowest">
+<div class="max-w-[1280px] mx-auto px-gutter lg:px-desktop-padding">
+<div class="text-center mb-16">
+<h2 class="font-h2 text-h2 mb-4">Simple, transparent pricing.</h2>
+<p class="font-body-lg text-on-surface-variant">No hidden fees. Scale as you grow.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Card 1 -->
+<div class="bg-surface rounded-[24px] p-10 card-shadow card-shadow-hover transition-all">
+<h3 class="font-h3 mb-2">Starter</h3>
+<div class="flex items-baseline gap-1 mb-6">
+<span class="font-h1 text-primary">$0</span>
+<span class="font-body-md text-on-surface-variant">/mo</span>
+</div>
+<ul class="space-y-4 mb-10">
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-[20px]">check</span>
+<span class="font-body-md">Up to 50 orders/mo</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-[20px]">check</span>
+<span class="font-body-md">Basic Catalog</span>
+</li>
+</ul>
+<button class="w-full border-[1.5px] border-outline text-on-surface-variant py-3 rounded-full font-label hover:bg-surface-container transition-colors">Choose Starter</button>
+</div>
+<!-- Card 2 (Standard) -->
+<div class="bg-white rounded-[24px] p-10 card-shadow scale-105 border-2 border-secondary relative overflow-hidden">
+<div class="absolute top-0 right-0 bg-secondary text-white px-6 py-1 rounded-bl-xl font-label">POPULAR</div>
+<h3 class="font-h3 mb-2">Standard</h3>
+<div class="flex items-baseline gap-1 mb-6">
+<span class="font-h1 text-secondary">$29</span>
+<span class="font-body-md text-on-surface-variant">/mo</span>
+</div>
+<ul class="space-y-4 mb-10">
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-[20px]">check</span>
+<span class="font-body-md">Unlimited orders</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-[20px]">check</span>
+<span class="font-body-md">Advanced analytics</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-[20px]">check</span>
+<span class="font-body-md">Custom branding</span>
+</li>
+</ul>
+<button class="w-full glow-gradient text-on-primary py-3 rounded-full font-label shadow-lg hover:scale-105 transition-transform">Choose Standard</button>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface rounded-[24px] p-10 card-shadow card-shadow-hover transition-all">
+<h3 class="font-h3 mb-2">Pro</h3>
+<div class="flex items-baseline gap-1 mb-6">
+<span class="font-h1 text-primary">$89</span>
+<span class="font-body-md text-on-surface-variant">/mo</span>
+</div>
+<ul class="space-y-4 mb-10">
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-[20px]">check</span>
+<span class="font-body-md">Priority support</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-[20px]">check</span>
+<span class="font-body-md">Multi-store sync</span>
+</li>
+</ul>
+<button class="w-full border-[1.5px] border-outline text-on-surface-variant py-3 rounded-full font-label hover:bg-surface-container transition-colors">Choose Pro</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Logo Strip -->
+<section class="py-16 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all">
+<div class="max-w-[1280px] mx-auto px-gutter lg:px-desktop-padding">
+<div class="flex flex-wrap justify-between items-center gap-8">
+<div class="font-h3 font-black">LOGOBAR</div>
+<div class="font-h3 font-black">SHOPWAVE</div>
+<div class="font-h3 font-black">LOCALHUB</div>
+<div class="font-h3 font-black">STOREFRONT</div>
+<div class="font-h3 font-black">BAKERLY</div>
+<div class="font-h3 font-black">GROCERY+</div>
+<div class="font-h3 font-black">PHARMAPURE</div>
+<div class="font-h3 font-black">ECOMFLOW</div>
+<div class="font-h3 font-black">CHATSELL</div>
+</div>
+</div>
+</section>
+<!-- Testimonials -->
+<section class="py-24 bg-surface-bright">
+<div class="max-w-[1280px] mx-auto px-gutter lg:px-desktop-padding">
+<h2 class="font-h2 text-h2 text-center mb-16">Loved by local owners.</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="bg-white p-8 rounded-[24px] card-shadow">
+<h4 class="font-h1 text-primary mb-4">300%</h4>
+<p class="font-body-lg mb-6">"Our orders tripled in just two weeks of using Qloqal. It's so simple for our customers."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-surface-container"></div>
+<div>
+<p class="font-label">Ahmed K.</p>
+<p class="text-xs text-on-surface-variant">Owner, Fresh Mart</p>
+</div>
+</div>
+</div>
+<div class="bg-white p-8 rounded-[24px] card-shadow">
+<h4 class="font-h1 text-secondary mb-4">12 hrs</h4>
+<p class="font-body-lg mb-6">"We save about 12 hours a week just by automating the order intake through WhatsApp."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-surface-container"></div>
+<div>
+<p class="font-label">Sara L.</p>
+<p class="text-xs text-on-surface-variant">Founder, Sweet Bakes</p>
+</div>
+</div>
+</div>
+<div class="bg-white p-8 rounded-[24px] card-shadow">
+<h4 class="font-h1 text-primary mb-4">0 missed</h4>
+<p class="font-body-lg mb-6">"I used to miss orders in group chats. Now everything is organized and professional."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-surface-container"></div>
+<div>
+<p class="font-label">John D.</p>
+<p class="text-xs text-on-surface-variant">Manager, Quick Fix Hardware</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Customer Side Teaser -->
+<section class="py-24 bg-surface-container-lowest">
+<div class="max-w-[1280px] mx-auto px-gutter lg:px-desktop-padding">
+<div class="bg-secondary/5 rounded-[48px] p-12 md:p-20 flex flex-col md:flex-row items-center gap-20 overflow-hidden">
+<div class="md:w-1/2">
+<h2 class="font-h1 text-h1 mb-8">Delight your customers.</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10">
+                        Give your customers a frictionless shopping experience. No passwords to remember, no apps to install. Just a simple link, a beautiful catalog, and a checkout that works right in their favorite chat app.
+                    </p>
+<button class="bg-secondary text-on-primary px-8 py-4 rounded-full font-label shadow-lg hover:scale-105 transition-transform">Explore Customer Experience</button>
+</div>
+<div class="md:w-1/2">
+<div class="relative">
+<div class="bg-white rounded-[40px] p-6 card-shadow border-[12px] border-surface-dim">
+<img class="rounded-3xl" data-alt="A smartphone showcasing a vibrant, high-end online storefront with a grid of high-resolution product images. The interface is clean, minimalist, and optimized for mobile shopping, featuring a 'Chat to Order' button prominently at the bottom. The overall feel is modern, efficient, and deeply integrated with the social commerce ecosystem." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZ6OU7ZzOSVMmKO6Lm3vbQQdfFcjTjQk7cQMRUNS74hTsBzLpsaYKmKaIYcmwsNRmU3AWPCfi19bg0dd6cUhe9IxxFkF3B5uCI46OlMEmkfCm4DzCo3LhGz-2lum45Igj_ibjPmN4d5e70PaUuWXFQB9Qfhs4H4Vm4fpBmuCt14K-JJ694snXpgvlLNz5VpzkBtfHVeEzIpB_9j4bAzu6yGf23VuTXfSlxbCLV9p1iFwD07A_ug5fcIZSUJvCWVadpk-e_inNau2Gx"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- FAQ Teaser -->
+<section class="py-24 bg-surface">
+<div class="max-w-[800px] mx-auto px-gutter lg:px-0">
+<h2 class="font-h2 text-h2 text-center mb-16">Frequently asked.</h2>
+<div class="space-y-4">
+<div class="bg-white p-6 rounded-2xl shadow-sm border border-outline-variant/30 flex justify-between items-center cursor-pointer hover:bg-surface-container-low transition-colors">
+<span class="font-label">Do I need a WhatsApp Business account?</span>
+<span class="material-symbols-outlined text-primary">add</span>
+</div>
+<div class="bg-white p-6 rounded-2xl shadow-sm border border-outline-variant/30 flex justify-between items-center cursor-pointer hover:bg-surface-container-low transition-colors">
+<span class="font-label">How long does it take to set up?</span>
+<span class="material-symbols-outlined text-primary">add</span>
+</div>
+<div class="bg-white p-6 rounded-2xl shadow-sm border border-outline-variant/30 flex justify-between items-center cursor-pointer hover:bg-surface-container-low transition-colors">
+<span class="font-label">Can I accept credit card payments?</span>
+<span class="material-symbols-outlined text-primary">add</span>
+</div>
+<div class="bg-white p-6 rounded-2xl shadow-sm border border-outline-variant/30 flex justify-between items-center cursor-pointer hover:bg-surface-container-low transition-colors">
+<span class="font-label">Is there a limit on products?</span>
+<span class="material-symbols-outlined text-primary">add</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="py-24">
+<div class="max-w-[1280px] mx-auto px-gutter lg:px-desktop-padding">
+<div class="glow-gradient rounded-[48px] p-16 text-center text-white relative overflow-hidden">
+<div class="absolute inset-0 bg-white/5 opacity-20 pointer-events-none" style="background-image: radial-gradient(circle at 20% 30%, white 1px, transparent 1px); background-size: 40px 40px;"></div>
+<h2 class="font-h1 text-h1 mb-8">Ready to take your shop online?</h2>
+<p class="font-body-lg text-white/80 max-w-2xl mx-auto mb-12">
+                    Join over 5,000 merchants who are already growing their business with Qloqal. Set up your shop in under 10 minutes.
+                </p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center">
+<button class="bg-white text-on-surface px-10 py-5 rounded-full font-h3 text-body-md shadow-2xl hover:scale-105 transition-transform">
+                        Start selling for free
+                    </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-inverse-surface dark:bg-on-background w-full py-xxl">
+<div class="max-w-[1280px] mx-auto px-gutter lg:px-desktop-padding grid grid-cols-2 md:grid-cols-5 gap-xl">
+<div class="col-span-2">
+<div class="font-h3 text-h3 font-black text-surface-bright mb-6">Qloqal</div>
+<p class="font-body-sm text-surface-variant max-w-xs">Empowering hyperlocal commerce through the power of conversation.</p>
+</div>
+<div>
+<h4 class="font-label text-surface-bright mb-6">Product</h4>
+<ul class="space-y-4">
+<li><a class="font-body-sm text-surface-variant hover:text-primary-container transition-colors" href="#">Features</a></li>
+<li><a class="font-body-sm text-surface-variant hover:text-primary-container transition-colors" href="#">Pricing</a></li>
+<li><a class="font-body-sm text-surface-variant hover:text-primary-container transition-colors" href="#">Marketplace</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label text-surface-bright mb-6">Company</h4>
+<ul class="space-y-4">
+<li><a class="font-body-sm text-surface-variant hover:text-primary-container transition-colors" href="#">About</a></li>
+<li><a class="font-body-sm text-surface-variant hover:text-primary-container transition-colors" href="#">Blog</a></li>
+<li><a class="font-body-sm text-surface-variant hover:text-primary-container transition-colors" href="#">Careers</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label text-surface-bright mb-6">Legal</h4>
+<ul class="space-y-4">
+<li><a class="font-body-sm text-surface-variant hover:text-primary-container transition-colors" href="#">Privacy</a></li>
+<li><a class="font-body-sm text-surface-variant hover:text-primary-container transition-colors" href="#">Terms</a></li>
+</ul>
+</div>
+</div>
+<div class="max-w-[1280px] mx-auto px-gutter lg:px-desktop-padding mt-20 pt-8 border-t border-surface-variant/10">
+<p class="font-body-sm text-surface-variant">© 2024 Qloqal Hyperlocal. All rights reserved.</p>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary": "#845332",
+                    "surface-tint": "#006e23",
+                    "on-primary": "#ffffff",
+                    "surface-bright": "#f3fced",
+                    "primary-fixed": "#6dff7f",
+                    "inverse-on-surface": "#eaf4e5",
+                    "on-tertiary-container": "#7a4a2a",
+                    "inverse-primary": "#40e360",
+                    "on-background": "#151e15",
+                    "on-primary-container": "#006420",
+                    "error-container": "#ffdad6",
+                    "on-tertiary-fixed-variant": "#683c1d",
+                    "on-secondary-container": "#fffbff",
+                    "surface-container-highest": "#dce5d7",
+                    "on-surface": "#151e15",
+                    "outline": "#6c7b69",
+                    "tertiary-fixed": "#ffdbc8",
+                    "on-tertiary-fixed": "#321300",
+                    "on-primary-fixed-variant": "#005319",
+                    "surface": "#f3fced",
+                    "surface-dim": "#d3ddce",
+                    "surface-container-high": "#e1ebdc",
+                    "on-error-container": "#93000a",
+                    "secondary-fixed": "#dfe0ff",
+                    "secondary": "#3c4dcd",
+                    "on-surface-variant": "#3d4a3b",
+                    "on-primary-fixed": "#002106",
+                    "primary": "#006e23",
+                    "primary-fixed-dim": "#40e360",
+                    "secondary-container": "#5767e8",
+                    "surface-container-low": "#edf7e7",
+                    "surface-container-lowest": "#ffffff",
+                    "background": "#f3fced",
+                    "primary-container": "#47e865",
+                    "outline-variant": "#bbcbb7",
+                    "inverse-surface": "#2a3329",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-fixed-dim": "#fab891",
+                    "error": "#ba1a1a",
+                    "secondary-fixed-dim": "#bcc2ff",
+                    "on-error": "#ffffff",
+                    "surface-container": "#e7f1e2",
+                    "surface-variant": "#dce5d7",
+                    "on-secondary-fixed-variant": "#2234b8",
+                    "on-secondary": "#ffffff",
+                    "tertiary-container": "#ffbd95",
+                    "on-secondary-fixed": "#000b63"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "xxl": "24px",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "container-max-width": "1280px",
+                    "desktop-padding": "96px",
+                    "xxl": "48px",
+                    "huge": "96px",
+                    "xl": "32px",
+                    "lg": "24px",
+                    "md": "16px",
+                    "sm": "8px",
+                    "xs": "4px"
+            },
+            "fontFamily": {
+                    "h2": ["Plus Jakarta Sans"],
+                    "h1": ["Plus Jakarta Sans"],
+                    "body-sm": ["Inter"],
+                    "h3": ["Plus Jakarta Sans"],
+                    "body-lg": ["Inter"],
+                    "label": ["Inter"],
+                    "body-md": ["Inter"]
+            },
+            "fontSize": {
+                    "h2": ["36px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "h1": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "body-sm": ["14px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                    "h3": ["24px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { background-color: #f3fced; color: #151e15; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .glow-button { background: linear-gradient(135deg, #006e23 0%, #47e865 100%); transition: all 0.3s ease; }
+        .glow-button:hover { filter: brightness(1.1); box-shadow: 0 4px 15px rgba(0, 110, 35, 0.3); }
+        .card-shadow { box-shadow: 0px 4px 20px rgba(14, 19, 48, 0.05); }
+        .app-cta-gradient { background: linear-gradient(180deg, #edf7e7 0%, #e1ebdc 100%); }
+    </style>
+</head>
+<body class="font-body-md text-body-md selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md shadow-sm">
+<nav class="max-w-[1280px] mx-auto px-gutter lg:px-desktop-padding flex justify-between items-center h-20">
+<div class="font-h3 text-h3 font-extrabold text-primary flex items-center gap-2">
+                Qloqal
+            </div>
+<!-- Desktop Links -->
+<div class="hidden md:flex items-center gap-8">
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200 font-body-md text-body-md" href="#">For Vendors</a>
+<a class="text-secondary font-bold border-b-2 border-secondary font-body-md text-body-md" href="#">For Customers</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200 font-body-md text-body-md" href="#">How it Works</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200 font-body-md text-body-md" href="#">Pricing</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200 font-body-md text-body-md" href="#">Customers</a>
+</div>
+<button class="glow-button px-6 py-3 rounded-full text-white font-bold text-body-md Active: scale-95 transition-transform">
+                Start selling
+            </button>
+</nav>
+</header>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="max-w-[1280px] mx-auto px-gutter lg:px-desktop-padding py-huge md:py-[120px] flex flex-col md:flex-row items-center gap-xxl overflow-hidden">
+<div class="w-full md:w-1/2">
+<span class="text-secondary font-label tracking-widest bg-secondary-fixed/30 px-3 py-1 rounded-full uppercase mb-md inline-block">Hyperlocal Experience</span>
+<h1 class="font-h1 text-h1 text-on-background mb-md">Real shops. Real prices. Real fast.</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-xl max-w-lg">Experience your neighborhood like never before. Shop from local vendors with transparent pricing and lightning-fast delivery to your doorstep.</p>
+<div class="flex flex-wrap gap-md">
+<button class="glow-button px-8 py-4 rounded-full text-white font-bold text-body-lg flex items-center gap-2">
+<span class="material-symbols-outlined">shopping_bag</span>
+                        Shop Now
+                    </button>
+<button class="border-2 border-primary text-primary font-bold px-8 py-4 rounded-full hover:bg-primary-container/10 transition-all text-body-lg">
+                        Learn More
+                    </button>
+</div>
+</div>
+<div class="w-full md:w-1/2 relative h-[500px] flex justify-center items-center">
+<!-- Phone Mockup 1 -->
+<div class="absolute w-[260px] h-[520px] bg-inverse-surface rounded-[3rem] border-[8px] border-on-background shadow-2xl z-20 -rotate-6 transform translate-x-[-20%]">
+<div class="w-full h-full rounded-[2.5rem] overflow-hidden bg-white">
+<img alt="App interface screen" class="w-full h-full object-cover" data-alt="A clean mobile app interface showing a vibrant hyperlocal grocery shopping list with fresh organic produce including greens and tomatoes. The UI uses soft shadows, rounded corners, and a bright white theme with primary green accents, reflecting a high-end SaaS aesthetic for neighborhood commerce." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBleO4Axaels2wfMs3oCNpbstXGGX3tpPY8CMed5t9r-gap-mmAUrHDjMNJy3SPfUZsNT3d7cSYnbfvvtXPYeH95YyDYcI75CcZj9QYQWFG43isBkRCQdkKATzwIoQZj_oHT-vR2D49_9kWBYKdr1xwq1bOHpvvj3WyFTFM_M9liT0KMTBgul7ERgUSG9jePZZ-UVeupHNVxkER7Dwn58Zvp7lw2BrtfysLe8dfZYmwP58dF5ViE-xC9JUOSCZLNReVbiV0WMzaA99"/>
+</div>
+</div>
+<!-- Phone Mockup 2 -->
+<div class="absolute w-[260px] h-[520px] bg-inverse-surface rounded-[3rem] border-[8px] border-on-background shadow-2xl z-10 rotate-6 transform translate-x-[20%] translate-y-[10%]">
+<div class="w-full h-full rounded-[2.5rem] overflow-hidden bg-white">
+<img alt="Map tracking interface" class="w-full h-full object-cover" data-alt="A mobile app interface displaying a live tracking map with a primary green delivery route and a small vehicle icon. The design is modern and minimalist with a soft white background and high-contrast labels, showcasing the real-time delivery features of a hyperlocal commerce platform." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPhuDavdmyO66pGqIFW4EjM5zDSZ4ZRoK2YKXhrwskcAMuj4vY2n1mx4D0HGFl3BdvuRkc8gc8d0n6TNzOOon3zCPFcAZjoTTrgvb89O320LP9W-E6vCIRMiznLMNZZV5twUqez_Xclg_6CFOOH1DnJ2GGjToXJozEU2S-ehSx2Vz1i9YcZXYM8_BTQwsDEKC6cLmxxW9B2qxjxMrFlmMT_q9tR6fws2VZE6vB_o0RQ5JCDjFSkFT6APnIx3AQJSjO2T65wXistqcu"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Features Section -->
+<section class="max-w-[1280px] mx-auto px-gutter lg:px-desktop-padding py-xxl bg-surface-container-lowest rounded-xxl mb-huge">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-lg">
+<!-- Card 1 -->
+<div class="bg-white p-xl rounded-xxl card-shadow border border-surface-container text-center flex flex-col items-center group hover:-translate-y-2 transition-transform duration-300">
+<div class="w-16 h-16 bg-primary-container/20 rounded-2xl flex items-center justify-center mb-md group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary text-[32px]">store</span>
+</div>
+<h3 class="font-h3 text-h3 text-on-surface mb-sm">See real shops</h3>
+<p class="font-body-md text-on-surface-variant">Browse actual inventories from physical stores in your neighborhood with up-to-the-minute stock updates.</p>
+</div>
+<!-- Card 2 -->
+<div class="bg-white p-xl rounded-xxl card-shadow border border-surface-container text-center flex flex-col items-center group hover:-translate-y-2 transition-transform duration-300">
+<div class="w-16 h-16 bg-secondary-fixed/30 rounded-2xl flex items-center justify-center mb-md group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-secondary text-[32px]">location_on</span>
+</div>
+<h3 class="font-h3 text-h3 text-on-surface mb-sm">Live tracking</h3>
+<p class="font-body-md text-on-surface-variant">Watch your order travel from the merchant's hands to your door with precise, real-time GPS tracking.</p>
+</div>
+<!-- Card 3 -->
+<div class="bg-white p-xl rounded-xxl card-shadow border border-surface-container text-center flex flex-col items-center group hover:-translate-y-2 transition-transform duration-300">
+<div class="w-16 h-16 bg-tertiary-container/20 rounded-2xl flex items-center justify-center mb-md group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-tertiary text-[32px]">payments</span>
+</div>
+<h3 class="font-h3 text-h3 text-on-surface mb-sm">Pay any way</h3>
+<p class="font-body-md text-on-surface-variant">Choose from various secure payment methods including cards, digital wallets, or local payment apps.</p>
+</div>
+</div>
+</section>
+<!-- Category Grid -->
+<section class="max-w-[1280px] mx-auto px-gutter lg:px-desktop-padding py-huge">
+<div class="text-center mb-huge">
+<h2 class="font-h2 text-h2 mb-md">Explore by Category</h2>
+<p class="font-body-lg text-on-surface-variant max-w-xl mx-auto">Everything you need from your local community, organized for your convenience.</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-5 gap-md">
+<!-- Tile 1 -->
+<div class="bg-white p-lg rounded-xxl card-shadow hover:shadow-lg transition-shadow flex flex-col items-center justify-center gap-sm aspect-square text-center">
+<span class="material-symbols-outlined text-[40px] text-primary">local_grocery_store</span>
+<span class="font-bold text-on-surface">Groceries</span>
+</div>
+<!-- Tile 2 -->
+<div class="bg-white p-lg rounded-xxl card-shadow hover:shadow-lg transition-shadow flex flex-col items-center justify-center gap-sm aspect-square text-center">
+<span class="material-symbols-outlined text-[40px] text-secondary">restaurant</span>
+<span class="font-bold text-on-surface">Restaurants</span>
+</div>
+<!-- Tile 3 -->
+<div class="bg-white p-lg rounded-xxl card-shadow hover:shadow-lg transition-shadow flex flex-col items-center justify-center gap-sm aspect-square text-center">
+<span class="material-symbols-outlined text-[40px] text-tertiary">medical_services</span>
+<span class="font-bold text-on-surface">Pharmacy</span>
+</div>
+<!-- Tile 4 -->
+<div class="bg-white p-lg rounded-xxl card-shadow hover:shadow-lg transition-shadow flex flex-col items-center justify-center gap-sm aspect-square text-center">
+<span class="material-symbols-outlined text-[40px] text-primary">bakery_dining</span>
+<span class="font-bold text-on-surface">Bakery</span>
+</div>
+<!-- Tile 5 -->
+<div class="bg-white p-lg rounded-xxl card-shadow hover:shadow-lg transition-shadow flex flex-col items-center justify-center gap-sm aspect-square text-center">
+<span class="material-symbols-outlined text-[40px] text-secondary">local_florist</span>
+<span class="font-bold text-on-surface">Florist</span>
+</div>
+<!-- Tile 6 -->
+<div class="bg-white p-lg rounded-xxl card-shadow hover:shadow-lg transition-shadow flex flex-col items-center justify-center gap-sm aspect-square text-center">
+<span class="material-symbols-outlined text-[40px] text-tertiary">pets</span>
+<span class="font-bold text-on-surface">Pet Supplies</span>
+</div>
+<!-- Tile 7 -->
+<div class="bg-white p-lg rounded-xxl card-shadow hover:shadow-lg transition-shadow flex flex-col items-center justify-center gap-sm aspect-square text-center">
+<span class="material-symbols-outlined text-[40px] text-primary">shopping_basket</span>
+<span class="font-bold text-on-surface">Fruit &amp; Veg</span>
+</div>
+<!-- Tile 8 -->
+<div class="bg-white p-lg rounded-xxl card-shadow hover:shadow-lg transition-shadow flex flex-col items-center justify-center gap-sm aspect-square text-center">
+<span class="material-symbols-outlined text-[40px] text-secondary">cleaning_services</span>
+<span class="font-bold text-on-surface">Essentials</span>
+</div>
+<!-- Tile 9 -->
+<div class="bg-white p-lg rounded-xxl card-shadow hover:shadow-lg transition-shadow flex flex-col items-center justify-center gap-sm aspect-square text-center">
+<span class="material-symbols-outlined text-[40px] text-tertiary">content_cut</span>
+<span class="font-bold text-on-surface">Services</span>
+</div>
+<!-- Tile 10 -->
+<div class="bg-white p-lg rounded-xxl card-shadow hover:shadow-lg transition-shadow flex flex-col items-center justify-center gap-sm aspect-square text-center">
+<span class="material-symbols-outlined text-[40px] text-primary text-primary-container">more_horiz</span>
+<span class="font-bold text-on-surface">Others</span>
+</div>
+</div>
+</section>
+<!-- App Store CTA -->
+<section class="max-w-[1280px] mx-auto px-gutter lg:px-desktop-padding py-huge">
+<div class="app-cta-gradient rounded-xxl p-xxl md:p-huge flex flex-col md:flex-row items-center justify-between gap-xl card-shadow overflow-hidden relative">
+<div class="absolute top-0 right-0 w-1/2 h-full opacity-10 pointer-events-none">
+<span class="material-symbols-outlined text-[400px] absolute -top-20 -right-20">install_mobile</span>
+</div>
+<div class="w-full md:w-3/5 z-10">
+<h2 class="font-h1 text-h1 text-on-background mb-md">Download Qloqal today</h2>
+<p class="font-body-lg text-on-surface-variant mb-xl">Get the best of your neighborhood delivered in minutes. Track orders live and enjoy transparent pricing directly from the app.</p>
+<div class="flex flex-wrap gap-md">
+<!-- App Store Badge -->
+<div class="bg-on-background text-white px-6 py-3 rounded-xl flex items-center gap-3 cursor-pointer hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[32px]">ios</span>
+<div class="flex flex-col leading-tight">
+<span class="font-label text-[10px] uppercase">Download on the</span>
+<span class="font-bold text-lg">App Store</span>
+</div>
+</div>
+<!-- Play Store Badge -->
+<div class="bg-on-background text-white px-6 py-3 rounded-xl flex items-center gap-3 cursor-pointer hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[32px]">play_arrow</span>
+<div class="flex flex-col leading-tight">
+<span class="font-label text-[10px] uppercase">Get it on</span>
+<span class="font-bold text-lg">Google Play</span>
+</div>
+</div>
+</div>
+</div>
+<div class="w-full md:w-1/3 flex justify-center z-10">
+<img alt="App preview" class="w-[280px] h-auto rounded-xxl shadow-2xl rotate-3" data-alt="A high-quality lifestyle photograph of a person comfortably sitting in a bright, modern living room while using a smartphone to order local groceries. The atmosphere is warm and inviting with natural sunlight, soft pastel colors, and clean minimalist interior design, emphasizing the convenience of the hyperlocal commerce app." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzl4Tm1tf8HWiR6FEN4bcxq5VVeTLIruobjbyeZH6mIiRZani264Tj5t7TxBC6E3so-_x3aqHPgkYQtsHEEyTWJZsRTFjzIvogLAusau2dMsLr_uSLd8EV4niEtI_MNgrWC_Ys4407I9OI8ikv4jWkBH1A800CYod2nM2ClWzwp-GPWEkGmodgcKXMdt2GfOMVXtAL73YtI31hzVZsmPP2BaXRs51dFLjiAkuY6_GPl6A723JkPqljeMYHdDsHBzAcd3qsosVkA2F9"/>
+</div>
+</div>
+</section>
+<!-- FAQ Section -->
+<section class="max-w-[1280px] mx-auto px-gutter lg:px-desktop-padding py-huge">
+<h2 class="font-h2 text-h2 mb-xl text-center">Frequently Asked Questions</h2>
+<div class="max-w-3xl mx-auto space-y-md">
+<!-- Q1 -->
+<details class="bg-white rounded-xl card-shadow border border-surface-container group" open="">
+<summary class="p-lg cursor-pointer flex justify-between items-center font-h3 text-[20px] text-on-surface list-none">
+                        How fast is the delivery?
+                        <span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="px-lg pb-lg text-on-surface-variant font-body-md border-t border-surface">
+                        Our delivery times typically range from 15 to 45 minutes, depending on your distance from the store and the complexity of your order.
+                    </div>
+</details>
+<!-- Q2 -->
+<details class="bg-white rounded-xl card-shadow border border-surface-container group">
+<summary class="p-lg cursor-pointer flex justify-between items-center font-h3 text-[20px] text-on-surface list-none">
+                        Are the prices the same as in-store?
+                        <span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="px-lg pb-lg text-on-surface-variant font-body-md border-t border-surface">
+                        Yes! One of our core promises is "Real prices." We work directly with vendors to ensure the digital menu matches their in-store price tags.
+                    </div>
+</details>
+<!-- Q3 -->
+<details class="bg-white rounded-xl card-shadow border border-surface-container group">
+<summary class="p-lg cursor-pointer flex justify-between items-center font-h3 text-[20px] text-on-surface list-none">
+                        Can I schedule a delivery for later?
+                        <span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="px-lg pb-lg text-on-surface-variant font-body-md border-t border-surface">
+                        Absolutely. You can choose to have your order delivered immediately or schedule it for any available time slot within the next 48 hours.
+                    </div>
+</details>
+<!-- Q4 -->
+<details class="bg-white rounded-xl card-shadow border border-surface-container group">
+<summary class="p-lg cursor-pointer flex justify-between items-center font-h3 text-[20px] text-on-surface list-none">
+                        Is there a minimum order amount?
+                        <span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="px-lg pb-lg text-on-surface-variant font-body-md border-t border-surface">
+                        Minimum order amounts vary by vendor, but most have a very low threshold to encourage small, daily local purchases.
+                    </div>
+</details>
+<!-- Q5 -->
+<details class="bg-white rounded-xl card-shadow border border-surface-container group">
+<summary class="p-lg cursor-pointer flex justify-between items-center font-h3 text-[20px] text-on-surface list-none">
+                        What if my item is out of stock?
+                        <span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="px-lg pb-lg text-on-surface-variant font-body-md border-t border-surface">
+                        Vendors update their stock in real-time. If an item becomes unavailable after ordering, you can choose between a refund or a substitution suggested by the merchant.
+                    </div>
+</details>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-xxl bg-inverse-surface">
+<div class="max-w-[1280px] mx-auto px-gutter lg:px-desktop-padding grid grid-cols-2 md:grid-cols-5 gap-xl">
+<div class="col-span-2 md:col-span-1">
+<div class="font-h3 text-h3 font-black text-surface-bright mb-md">Qloqal</div>
+<p class="text-surface-variant font-body-sm mb-lg">Empowering neighborhood commerce through technology.</p>
+</div>
+<div class="flex flex-col gap-sm">
+<h4 class="text-surface-bright font-semibold font-body-md mb-sm">Product</h4>
+<a class="text-surface-variant hover:text-primary-container transition-colors font-body-sm" href="#">Features</a>
+<a class="text-surface-variant hover:text-primary-container transition-colors font-body-sm" href="#">Mobile App</a>
+<a class="text-surface-variant hover:text-primary-container transition-colors font-body-sm" href="#">Security</a>
+</div>
+<div class="flex flex-col gap-sm">
+<h4 class="text-surface-bright font-semibold font-body-md mb-sm">Solutions</h4>
+<a class="text-surface-variant hover:text-primary-container transition-colors font-body-sm" href="#">For Vendors</a>
+<a class="text-surface-variant hover:text-primary-container transition-colors font-body-sm" href="#">For Customers</a>
+<a class="text-surface-variant hover:text-primary-container transition-colors font-body-sm" href="#">Delivery</a>
+</div>
+<div class="flex flex-col gap-sm">
+<h4 class="text-surface-bright font-semibold font-body-md mb-sm">Company</h4>
+<a class="text-surface-variant hover:text-primary-container transition-colors font-body-sm" href="#">About Us</a>
+<a class="text-surface-variant hover:text-primary-container transition-colors font-body-sm" href="#">Careers</a>
+<a class="text-surface-variant hover:text-primary-container transition-colors font-body-sm" href="#">Contact</a>
+</div>
+<div class="flex flex-col gap-sm">
+<h4 class="text-surface-bright font-semibold font-body-md mb-sm">Legal</h4>
+<a class="text-surface-variant hover:text-primary-container transition-colors font-body-sm" href="#">Privacy</a>
+<a class="text-surface-variant hover:text-primary-container transition-colors font-body-sm" href="#">Terms</a>
+<a class="text-surface-variant hover:text-primary-container transition-colors font-body-sm" href="#">Cookie Policy</a>
+</div>
+</div>
+<div class="max-w-[1280px] mx-auto px-gutter lg:px-desktop-padding mt-xxl pt-xl border-t border-outline-variant/20">
+<p class="text-surface-variant text-center font-body-sm">© 2024 Qloqal Hyperlocal. All rights reserved.</p>
+</div>
+</footer>
+</body></html>

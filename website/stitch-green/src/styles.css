@@ -1,0 +1,166 @@
+@import "tailwindcss";
+
+@theme {
+  /* Surfaces */
+  --color-surface: #f3fced;
+  --color-surface-dim: #d3ddce;
+  --color-surface-bright: #f3fced;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #edf7e7;
+  --color-surface-container: #e7f1e2;
+  --color-surface-container-high: #e1ebdc;
+  --color-surface-container-highest: #dce5d7;
+  --color-surface-variant: #dce5d7;
+
+  /* Text on surfaces */
+  --color-on-surface: #151e15;
+  --color-on-surface-variant: #3d4a3b;
+  --color-inverse-surface: #2a3329;
+  --color-inverse-on-surface: #eaf4e5;
+
+  /* Borders / outlines */
+  --color-outline: #6c7b69;
+  --color-outline-variant: #bbcbb7;
+
+  /* Primary — green */
+  --color-primary: #006e23;
+  --color-on-primary: #ffffff;
+  --color-primary-container: #47e865;
+  --color-on-primary-container: #006420;
+  --color-inverse-primary: #40e360;
+
+  /* Secondary — blue */
+  --color-secondary: #3c4dcd;
+  --color-on-secondary: #ffffff;
+  --color-secondary-container: #5767e8;
+  --color-on-secondary-container: #fffbff;
+
+  /* Tertiary — clay */
+  --color-tertiary: #845332;
+  --color-on-tertiary: #ffffff;
+  --color-tertiary-container: #ffbd95;
+  --color-on-tertiary-container: #7a4a2a;
+
+  /* Status */
+  --color-error: #ba1a1a;
+  --color-on-error: #ffffff;
+  --color-error-container: #ffdad6;
+  --color-on-error-container: #93000a;
+
+  /* Background */
+  --color-background: #f3fced;
+  --color-on-background: #151e15;
+
+  /* WhatsApp brand (mockups only) */
+  --color-whatsapp: #25d366;
+
+  /* Type families */
+  --font-display: "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+
+  /* Container */
+  --container-max: 1280px;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-body);
+    color: var(--color-on-surface);
+    background-color: var(--color-surface);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background-color: var(--color-surface);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    color: var(--color-on-surface);
+    letter-spacing: -0.01em;
+  }
+
+  h1 {
+    font-weight: 800;
+    letter-spacing: -0.02em;
+  }
+
+  h2 {
+    font-weight: 700;
+  }
+
+  h3 {
+    font-weight: 700;
+  }
+
+  .material-symbols-outlined {
+    font-variation-settings:
+      "FILL" 0,
+      "wght" 400,
+      "GRAD" 0,
+      "opsz" 24;
+    line-height: 1;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-secondary);
+    outline-offset: 2px;
+    border-radius: 6px;
+  }
+}
+
+@layer utilities {
+  .glow-gradient {
+    background: linear-gradient(135deg, #006e23 0%, #3c4dcd 100%);
+  }
+
+  .glow-gradient-text {
+    background: linear-gradient(135deg, #006e23 0%, #3c4dcd 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  .card-shadow {
+    box-shadow: 0 4px 20px rgba(14, 19, 48, 0.05);
+  }
+
+  .card-shadow-hover {
+    transition: box-shadow 200ms ease;
+  }
+
+  .card-shadow-hover:hover {
+    box-shadow: 0 8px 30px rgba(14, 19, 48, 0.1);
+  }
+
+  .glass-nav {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    z-index: -1;
+    opacity: 0.15;
+    pointer-events: none;
+  }
+
+  .container-page {
+    max-width: var(--container-max);
+    margin-inline: auto;
+    padding-inline: 24px;
+  }
+
+  @media (min-width: 1024px) {
+    .container-page {
+      padding-inline: 96px;
+    }
+  }
+}

@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>How it Works | Qloqal Hyperlocal</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary": "#845332",
+                        "surface-tint": "#006e23",
+                        "on-primary": "#ffffff",
+                        "surface-bright": "#f3fced",
+                        "primary-fixed": "#6dff7f",
+                        "inverse-on-surface": "#eaf4e5",
+                        "on-tertiary-container": "#7a4a2a",
+                        "inverse-primary": "#40e360",
+                        "on-background": "#151e15",
+                        "on-primary-container": "#006420",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed-variant": "#683c1d",
+                        "on-secondary-container": "#fffbff",
+                        "surface-container-highest": "#dce5d7",
+                        "on-surface": "#151e15",
+                        "outline": "#6c7b69",
+                        "tertiary-fixed": "#ffdbc8",
+                        "on-tertiary-fixed": "#321300",
+                        "on-primary-fixed-variant": "#005319",
+                        "surface": "#f3fced",
+                        "surface-dim": "#d3ddce",
+                        "surface-container-high": "#e1ebdc",
+                        "on-error-container": "#93000a",
+                        "secondary-fixed": "#dfe0ff",
+                        "secondary": "#3c4dcd",
+                        "on-surface-variant": "#3d4a3b",
+                        "on-primary-fixed": "#002106",
+                        "primary": "#006e23",
+                        "primary-fixed-dim": "#40e360",
+                        "secondary-container": "#5767e8",
+                        "surface-container-low": "#edf7e7",
+                        "surface-container-lowest": "#ffffff",
+                        "background": "#f3fced",
+                        "primary-container": "#47e865",
+                        "outline-variant": "#bbcbb7",
+                        "inverse-surface": "#2a3329",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed-dim": "#fab891",
+                        "error": "#ba1a1a",
+                        "secondary-fixed-dim": "#bcc2ff",
+                        "on-error": "#ffffff",
+                        "surface-container": "#e7f1e2",
+                        "surface-variant": "#dce5d7",
+                        "on-secondary-fixed-variant": "#2234b8",
+                        "on-secondary": "#ffffff",
+                        "tertiary-container": "#ffbd95",
+                        "on-secondary-fixed": "#000b63"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "container-max-width": "1280px",
+                        "desktop-padding": "96px",
+                        "scale": "{'xs': '4px', 'sm': '8px', 'md': '16px', 'lg': '24px', 'xl': '32px', 'xxl': '48px', 'huge': '96px'}"
+                    },
+                    "fontFamily": {
+                        "h2": ["Plus Jakarta Sans"],
+                        "h1": ["Plus Jakarta Sans"],
+                        "body-sm": ["Inter"],
+                        "h3": ["Plus Jakarta Sans"],
+                        "body-lg": ["Inter"],
+                        "label": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "h2": ["36px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "h1": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "body-sm": ["14px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                        "h3": ["24px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "label": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .soft-shadow {
+            box-shadow: 0px 4px 20px rgba(14, 19, 48, 0.05);
+        }
+        .glow-gradient {
+            background: linear-gradient(135deg, #006e23 0%, #47e865 100%);
+        }
+        .ribbon-line {
+            background: linear-gradient(90deg, #47e865 0%, #5767e8 100%);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md dark:bg-inverse-surface/80 shadow-sm">
+<div class="max-w-[1280px] mx-auto px-gutter lg:px-desktop-padding flex justify-between items-center h-20">
+<div class="font-h3 text-h3 font-extrabold text-primary dark:text-inverse-primary flex items-center gap-2">
+<span class="material-symbols-outlined text-4xl" data-icon="hub">hub</span>
+                Qloqal
+            </div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors duration-200" href="#">For Vendors</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors duration-200" href="#">For Customers</a>
+<a class="font-body-md text-body-md text-secondary dark:text-secondary-fixed-dim font-bold border-b-2 border-secondary" href="#">How it Works</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors duration-200" href="#">Pricing</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors duration-200" href="#">Customers</a>
+</div>
+<button class="glow-gradient text-on-primary px-6 py-3 rounded-full font-label text-label uppercase tracking-widest active:scale-95 transition-transform shadow-lg">
+                Start selling
+            </button>
+</div>
+</nav>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="py-huge bg-surface-container-lowest">
+<div class="max-w-[1280px] mx-auto px-gutter lg:px-desktop-padding text-center">
+<h1 class="font-h1 text-h1 text-on-background mb-md">From browse to bag, in minutes.</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-xxl">Experience the speed of hyperlocal commerce. We've bridged the gap between digital convenience and physical proximity.</p>
+<!-- Horizontal 6-step ribbon -->
+<div class="relative mt-xxl py-md">
+<div class="absolute top-1/2 left-0 w-full h-[2px] ribbon-line -translate-y-1/2 z-0 opacity-30"></div>
+<div class="relative z-10 grid grid-cols-2 md:grid-cols-6 gap-md">
+<div class="flex flex-col items-center gap-sm">
+<div class="w-12 h-12 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-bold shadow-md">1</div>
+<span class="font-label text-label uppercase text-primary">Discover</span>
+</div>
+<div class="flex flex-col items-center gap-sm">
+<div class="w-12 h-12 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-bold shadow-md">2</div>
+<span class="font-label text-label uppercase text-primary">Select</span>
+</div>
+<div class="flex flex-col items-center gap-sm">
+<div class="w-12 h-12 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-bold shadow-md">3</div>
+<span class="font-label text-label uppercase text-primary">Checkout</span>
+</div>
+<div class="flex flex-col items-center gap-sm">
+<div class="w-12 h-12 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center font-bold shadow-md">4</div>
+<span class="font-label text-label uppercase text-secondary">Notify</span>
+</div>
+<div class="flex flex-col items-center gap-sm">
+<div class="w-12 h-12 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center font-bold shadow-md">5</div>
+<span class="font-label text-label uppercase text-secondary">Pack</span>
+</div>
+<div class="flex flex-col items-center gap-sm">
+<div class="w-12 h-12 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center font-bold shadow-md">6</div>
+<span class="font-label text-label uppercase text-secondary">Handoff</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Parallel Timeline -->
+<section class="py-huge bg-surface">
+<div class="max-w-[1280px] mx-auto px-gutter lg:px-desktop-padding">
+<div class="text-center mb-xxl">
+<h2 class="font-h2 text-h2 text-on-background">Synchronized Success</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">See how we harmonize every transaction for both parties.</p>
+</div>
+<div class="relative grid grid-cols-1 md:grid-cols-2 gap-huge">
+<!-- Vertical Divider Line -->
+<div class="hidden md:block absolute left-1/2 top-0 bottom-0 w-[1px] bg-outline-variant -translate-x-1/2"></div>
+<!-- Customer Side (Blue) -->
+<div class="space-y-xl relative">
+<div class="flex items-center gap-md mb-lg">
+<span class="material-symbols-outlined text-secondary text-4xl" data-icon="person">person</span>
+<h3 class="font-h3 text-h3 text-secondary">Customer Journey</h3>
+</div>
+<div class="bg-surface-container-lowest p-lg rounded-[24px] soft-shadow border-r-4 border-secondary">
+<span class="font-label text-label text-secondary mb-2 block">STEP 01</span>
+<p class="font-body-md text-body-md font-bold mb-1 text-on-surface">Browse Local Catalog</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Access a digital mirror of your favorite local shops through the Qloqal app.</p>
+</div>
+<div class="bg-surface-container-lowest p-lg rounded-[24px] soft-shadow border-r-4 border-secondary">
+<span class="font-label text-label text-secondary mb-2 block">STEP 02</span>
+<p class="font-body-md text-body-md font-bold mb-1 text-on-surface">Secure Instant Pay</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">One-click checkout with local payment methods and secure encryption.</p>
+</div>
+<div class="bg-surface-container-lowest p-lg rounded-[24px] soft-shadow border-r-4 border-secondary">
+<span class="font-label text-label text-secondary mb-2 block">STEP 03</span>
+<p class="font-body-md text-body-md font-bold mb-1 text-on-surface">Track via WhatsApp</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Receive real-time order updates and chat directly with the merchant.</p>
+</div>
+</div>
+<!-- Vendor Side (Green) -->
+<div class="space-y-xl relative">
+<div class="flex items-center gap-md mb-lg">
+<span class="material-symbols-outlined text-primary text-4xl" data-icon="storefront">storefront</span>
+<h3 class="font-h3 text-h3 text-primary">Vendor Workflow</h3>
+</div>
+<div class="bg-surface-container-lowest p-lg rounded-[24px] soft-shadow border-l-4 border-primary">
+<span class="font-label text-label text-primary mb-2 block">STEP 01</span>
+<p class="font-body-md text-body-md font-bold mb-1 text-on-surface">Receive WhatsApp Alert</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Orders arrive as rich-media messages on the app you already use.</p>
+</div>
+<div class="bg-surface-container-lowest p-lg rounded-[24px] soft-shadow border-l-4 border-primary">
+<span class="font-label text-label text-primary mb-2 block">STEP 02</span>
+<p class="font-body-md text-body-md font-bold mb-1 text-on-surface">Tap to Confirm</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Confirm inventory and set pickup times with a single button press.</p>
+</div>
+<div class="bg-surface-container-lowest p-lg rounded-[24px] soft-shadow border-l-4 border-primary">
+<span class="font-label text-label text-primary mb-2 block">STEP 03</span>
+<p class="font-body-md text-body-md font-bold mb-1 text-on-surface">Payout Disbursed</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Funds are released to your linked bank account as soon as the item is scanned.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Behind the Scenes: SVG-style diagram -->
+<section class="py-huge bg-inverse-surface text-surface-bright">
+<div class="max-w-[1280px] mx-auto px-gutter lg:px-desktop-padding">
+<div class="text-center mb-huge">
+<h2 class="font-h2 text-h2 mb-md">The Engine Under the Hood</h2>
+<p class="font-body-lg text-body-lg text-surface-variant opacity-80">Highly complex infrastructure, simplified for everyday life.</p>
+</div>
+<div class="flex flex-col lg:flex-row items-center justify-between gap-xl">
+<!-- Customer App -->
+<div class="flex flex-col items-center text-center gap-md w-full max-w-[200px]">
+<div class="w-24 h-24 rounded-3xl bg-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-5xl text-on-secondary" data-icon="smartphone">smartphone</span>
+</div>
+<p class="font-h3 text-h3">Customer App</p>
+</div>
+<!-- Arrow -->
+<div class="hidden lg:block">
+<span class="material-symbols-outlined text-4xl text-primary" data-icon="trending_flat">trending_flat</span>
+</div>
+<!-- Qloqal Cloud -->
+<div class="flex flex-col items-center text-center gap-md w-full max-w-[200px] py-lg border-2 border-primary rounded-[32px] bg-surface/10 backdrop-blur-md">
+<div class="w-24 h-24 rounded-full bg-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-5xl text-on-primary" data-icon="cloud">cloud</span>
+</div>
+<p class="font-h3 text-h3 text-primary">Qloqal Cloud</p>
+<span class="font-label text-label text-outline-variant">Logic &amp; Sync</span>
+</div>
+<!-- Arrow -->
+<div class="hidden lg:block">
+<span class="material-symbols-outlined text-4xl text-primary" data-icon="trending_flat">trending_flat</span>
+</div>
+<!-- WhatsApp -->
+<div class="flex flex-col items-center text-center gap-md w-full max-w-[200px]">
+<div class="w-24 h-24 rounded-3xl bg-[#25D366] flex items-center justify-center">
+<span class="material-symbols-outlined text-5xl text-white" data-icon="chat">chat</span>
+</div>
+<p class="font-h3 text-h3">WhatsApp API</p>
+</div>
+<!-- Arrow -->
+<div class="hidden lg:block">
+<span class="material-symbols-outlined text-4xl text-primary" data-icon="trending_flat">trending_flat</span>
+</div>
+<!-- Vendor Phone -->
+<div class="flex flex-col items-center text-center gap-md w-full max-w-[200px]">
+<div class="w-24 h-24 rounded-3xl bg-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-5xl text-on-primary" data-icon="receipt_long">receipt_long</span>
+</div>
+<p class="font-h3 text-h3">Vendor Device</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Why WhatsApp Section -->
+<section class="py-huge bg-surface-bright">
+<div class="max-w-[1280px] mx-auto px-gutter lg:px-desktop-padding">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-huge items-center">
+<div class="relative rounded-[32px] overflow-hidden aspect-video soft-shadow">
+<img class="w-full h-full object-cover" data-alt="A clean, minimalist high-key shot of a modern smartphone resting on a bright wooden table. The phone screen displays a vibrant WhatsApp chat interface with green and white bubbles, suggesting a seamless business communication. The environment is flooded with soft, natural morning light, creating a professional SaaS aesthetic. The focus is sharp on the device, with a softly blurred background of a modern home office." src="https://lh3.googleusercontent.com/aida-public/AB6AXuABv3YwgZf7fqSLlnWgIHR1gBmGBXUJHiTX9Xb4TBlcN1sOswT_oYxRBQN3gySJR7mhVmOXaTgRVnHPSfjKenaG-9izkJ7yIn9QR4C0GhP6jpli48ZD15c1s5uke5L5e7mQkWnqrYz8NdtUo8Y14wyhxLDjTzAKrmftEapFQZ0XRSbY3Ky2mZ1pMCWgej-YLlCGnfYdf8IRfJ8LFt8pngh_K_PiIoP92Lw2DdPM_KlYBkaOVrKQIsucqMxAubZIpcNRcFR87P38XP4B"/>
+<div class="absolute inset-0 bg-primary/10 mix-blend-overlay"></div>
+</div>
+<div>
+<h2 class="font-h2 text-h2 text-on-background mb-lg">Zero Learning Curve with WhatsApp</h2>
+<div class="space-y-lg">
+<div class="flex gap-md">
+<div class="shrink-0 w-12 h-12 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="done_all">done_all</span>
+</div>
+<div>
+<p class="font-body-md text-body-md font-bold text-on-surface">Familiar Interface</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">No new complicated apps for vendors to learn. If they can text, they can sell.</p>
+</div>
+</div>
+<div class="flex gap-md">
+<div class="shrink-0 w-12 h-12 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="bolt">bolt</span>
+</div>
+<div>
+<p class="font-body-md text-body-md font-bold text-on-surface">Instant Notifications</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">98% open rates ensure no order is missed and customers get instant responses.</p>
+</div>
+</div>
+<div class="flex gap-md">
+<div class="shrink-0 w-12 h-12 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="public">public</span>
+</div>
+<div>
+<p class="font-body-md text-body-md font-bold text-on-surface">Universal Accessibility</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Works on any smartphone, even with limited data or older hardware.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Band -->
+<section class="py-xxl bg-primary text-on-primary">
+<div class="max-w-[1280px] mx-auto px-gutter lg:px-desktop-padding flex flex-col md:flex-row justify-between items-center gap-xl text-center md:text-left">
+<div>
+<h2 class="font-h2 text-h2 mb-sm text-on-primary">Ready to connect your neighborhood?</h2>
+<p class="font-body-lg text-body-lg text-primary-fixed-dim">Join 2,500+ local merchants and start selling in under 10 minutes.</p>
+</div>
+<div class="flex gap-md">
+<button class="bg-on-primary text-primary px-huge py-md rounded-full font-label text-label uppercase tracking-widest active:scale-95 transition-transform font-bold">Get Started</button>
+<button class="border-2 border-on-primary text-on-primary px-huge py-md rounded-full font-label text-label uppercase tracking-widest active:scale-95 transition-transform font-bold">Watch Demo</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-xxl bg-inverse-surface dark:bg-on-background">
+<div class="max-w-[1280px] mx-auto px-gutter lg:px-desktop-padding grid grid-cols-2 md:grid-cols-5 gap-xl">
+<div class="col-span-2">
+<div class="font-h3 text-h3 font-black text-surface-bright mb-md">Qloqal</div>
+<p class="font-body-sm text-body-sm text-surface-variant mb-lg max-w-xs">Connecting the heart of the community through modern, hyperlocal commerce technology.</p>
+</div>
+<div>
+<h4 class="font-label text-label uppercase text-primary-fixed mb-md">Product</h4>
+<ul class="space-y-sm">
+<li><a class="font-body-sm text-body-sm text-surface-variant hover:text-primary-container transition-colors" href="#">For Vendors</a></li>
+<li><a class="font-body-sm text-body-sm text-surface-variant hover:text-primary-container transition-colors" href="#">For Customers</a></li>
+<li><a class="font-body-sm text-body-sm text-surface-bright font-semibold" href="#">How it Works</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label text-label uppercase text-primary-fixed mb-md">Solutions</h4>
+<ul class="space-y-sm">
+<li><a class="font-body-sm text-body-sm text-surface-variant hover:text-primary-container transition-colors" href="#">Retailers</a></li>
+<li><a class="font-body-sm text-body-sm text-surface-variant hover:text-primary-container transition-colors" href="#">Restaurants</a></li>
+<li><a class="font-body-sm text-body-sm text-surface-variant hover:text-primary-container transition-colors" href="#">Service Providers</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label text-label uppercase text-primary-fixed mb-md">Legal</h4>
+<ul class="space-y-sm">
+<li><a class="font-body-sm text-body-sm text-surface-variant hover:text-primary-container transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="font-body-sm text-body-sm text-surface-variant hover:text-primary-container transition-colors" href="#">Terms of Service</a></li>
+<li><a class="font-body-sm text-body-sm text-surface-variant hover:text-primary-container transition-colors" href="#">Cookie Policy</a></li>
+</ul>
+</div>
+</div>
+<div class="max-w-[1280px] mx-auto px-gutter lg:px-desktop-padding mt-huge pt-lg border-t border-outline/20">
+<p class="font-body-sm text-body-sm text-surface-variant">© 2024 Qloqal Hyperlocal. All rights reserved.</p>
+</div>
+</footer>
+</body></html>
