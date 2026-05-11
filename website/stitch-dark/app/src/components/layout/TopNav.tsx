@@ -40,7 +40,7 @@ export function TopNav() {
           <a
             href="#"
             data-cta="topnav-get-started"
-            className="hidden sm:inline-flex items-center bg-primary-container text-on-primary-container text-button font-bold px-6 py-2 rounded-md transition-all hover:shadow-[0_0_20px_rgba(71,232,101,0.4)] active:scale-95"
+            className="hidden sm:inline-flex items-center bg-primary-container !text-black text-button font-bold px-6 py-2 rounded-md transition-all hover:shadow-[0_0_20px_rgba(16,185,129,0.4)] active:scale-95"
           >
             Get Started
           </a>
@@ -83,7 +83,7 @@ export function TopNav() {
             </button>
             <a
               href="#"
-              className="flex-1 text-center bg-primary-container text-on-primary-container text-button font-bold py-4 rounded-md"
+              className="flex-1 text-center bg-primary-container !text-black text-button font-bold py-4 rounded-md"
             >
               Get Started
             </a>

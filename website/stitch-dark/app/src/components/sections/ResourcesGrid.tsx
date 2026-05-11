@@ -31,7 +31,7 @@ export function ResourcesGrid() {
               className={cn(
                 "px-4 py-2 rounded-full text-button transition-colors",
                 activeCategory === c
-                  ? "bg-primary text-on-primary"
+                  ? "bg-primary !text-black"
                   : "bg-surface-container-high text-on-surface-variant hover:bg-surface-variant",
               )}
             >

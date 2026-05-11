@@ -6,7 +6,7 @@ import { Eyebrow } from "@/components/primitives/Eyebrow";
 export function AISection() {
   return (
     <Section className="relative overflow-hidden bg-surface-container-lowest">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(71,232,101,0.05)_0%,_transparent_70%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(16,185,129,0.05)_0%,_transparent_70%)]" />
       <Container className="text-center relative z-10">
         <Eyebrow icon={<Zap size={14} />} className="mb-6">
           New Features Released
