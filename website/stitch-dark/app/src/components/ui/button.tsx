@@ -9,7 +9,7 @@ const buttonVariants = cva(
     variants: {
       variant: {
         primary:
-          "bg-primary-container text-on-primary-container font-bold hover:shadow-[0_0_20px_rgba(71,232,101,0.4)]",
+          "bg-primary-container !text-black font-bold hover:shadow-[0_0_20px_rgba(16,185,129,0.4)]",
         outline:
           "border border-outline text-on-surface hover:bg-surface-bright/40",
         ghost: "text-on-surface hover:bg-surface-container",

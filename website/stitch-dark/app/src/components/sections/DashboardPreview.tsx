@@ -78,12 +78,12 @@ function FakeChart() {
     <svg viewBox={`0 0 ${w} ${h}`} className="w-full h-32" preserveAspectRatio="none">
       <defs>
         <linearGradient id="dash-fill" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="#47e865" stopOpacity="0.3" />
-          <stop offset="100%" stopColor="#47e865" stopOpacity="0" />
+          <stop offset="0%" stopColor="#10B981" stopOpacity="0.3" />
+          <stop offset="100%" stopColor="#10B981" stopOpacity="0" />
         </linearGradient>
       </defs>
       <path d={area} fill="url(#dash-fill)" />
-      <path d={path} stroke="#47e865" strokeWidth="2" fill="none" strokeLinecap="round" />
+      <path d={path} stroke="#10B981" strokeWidth="2" fill="none" strokeLinecap="round" />
     </svg>
   );
 }

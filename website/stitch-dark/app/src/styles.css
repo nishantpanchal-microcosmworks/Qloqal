@@ -11,7 +11,7 @@
   --color-surface-container-high: #272a2c;
   --color-surface-container-highest: #323537;
   --color-surface-variant: #323537;
-  --color-surface-tint: #40e360;
+  --color-surface-tint: #059669;
   --color-background: #101415;
 
   /* === Foreground === */
@@ -22,12 +22,12 @@
   --color-inverse-on-surface: #2d3133;
 
   /* === Primary (green) === */
-  --color-primary: #96ff9a;
-  --color-primary-container: #47e865;
+  --color-primary: #34D399;
+  --color-primary-container: #10B981;
   --color-on-primary: #00390e;
   --color-on-primary-container: #006420;
-  --color-primary-fixed: #6dff7f;
-  --color-primary-fixed-dim: #40e360;
+  --color-primary-fixed: #34D399;
+  --color-primary-fixed-dim: #059669;
   --color-on-primary-fixed: #002106;
   --color-on-primary-fixed-variant: #005319;
   --color-inverse-primary: #006e23;
@@ -116,8 +116,8 @@
   --font-display: "Plus Jakarta Sans", "Inter", ui-sans-serif, sans-serif;
 
   /* === Shadows === */
-  --shadow-glow-primary: 0 0 20px rgba(71, 232, 101, 0.15);
-  --shadow-glow-primary-strong: 0 0 30px rgba(71, 232, 101, 0.4);
+  --shadow-glow-primary: 0 0 20px rgba(16, 185, 129, 0.15);
+  --shadow-glow-primary-strong: 0 0 30px rgba(16, 185, 129, 0.4);
 }
 
 /* === Base === */
@@ -161,12 +161,12 @@ body {
 
 @utility hero-gradient {
   background:
-    radial-gradient(circle at top right, rgba(71, 232, 101, 0.15), transparent),
+    radial-gradient(circle at top right, rgba(16, 185, 129, 0.15), transparent),
     radial-gradient(circle at bottom left, rgba(44, 61, 191, 0.15), transparent);
 }
 
 @utility text-gradient-primary {
-  background: linear-gradient(135deg, #96ff9a 0%, #47e865 100%);
+  background: linear-gradient(135deg, #34D399 0%, #10B981 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
