@@ -59,11 +59,11 @@
   --radius: 0.875rem;
 
   /* Brand — exact hex from spec, expressed in oklch */
-  --brand-green: oklch(0.86 0.22 145);          /* #47E865 */
-  --brand-green-dark: oklch(0.78 0.22 145);     /* #2BC74A */
-  --brand-green-soft: oklch(0.97 0.05 145);     /* #E8FBEC */
-  --brand-blue: oklch(0.36 0.21 270);           /* #2C3DBF */
-  --brand-blue-dark: oklch(0.30 0.21 270);      /* #1F2C99 */
+  --brand-green: #25D366;
+  --brand-green-dark: #1FB755;
+  --brand-green-soft: #DFF7E8;
+  --brand-blue: #3041C7;
+  --brand-blue-dark: #232F9E;
   --brand-blue-soft: oklch(0.95 0.04 270);      /* #E8EBFB */
   --ink: oklch(0.18 0.05 270);                  /* #0E1330 */
   --muted-ink: oklch(0.50 0.04 270);            /* #5B6080 */

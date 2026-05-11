@@ -1,12 +1,12 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Seo } from "@/components/Seo";
 import { Hero } from "@/components/Hero";
-import { CategoryStrip } from "@/components/CategoryStrip";
 import { WhyWhatsApp } from "@/components/WhyWhatsApp";
 import { WhatsAppMockup, OrderCard } from "@/components/WhatsAppMockup";
 import { CTABand } from "@/components/CTABand";
 import { categories } from "@/data/categories";
-import { ShieldCheck, MapPin, HandCoins, CreditCard, Quote } from "lucide-react";
+import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "@/components/ui/carousel";
+import { ShieldCheck, MapPin, HandCoins, Quote, Check, ShoppingBag, Warehouse, Bike } from "lucide-react";
 
 export const Route = createFileRoute("/")({
   component: HomePage,
@@ -20,7 +20,6 @@ function HomePage() {
         description="Qloqal turns any small business into an online shop. Customers order in the app; you take orders right on WhatsApp. No vendor app, no tablet, no training."
       />
       <Hero />
-      <CategoryStrip />
 
       {/* Vendor flow */}
       <section className="container-pad mx-auto max-w-7xl py-16">
@@ -68,61 +67,143 @@ function HomePage() {
             <h2 className="mt-2 font-display font-extrabold text-3xl md:text-5xl">Built for every kind of small business</h2>
             <p className="mt-4 text-lg text-muted-ink">Whatever you sell, however you run — Qloqal fits the way your shop already works.</p>
           </div>
-          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {categories.map(c => (
-              <div key={c.slug} className="rounded-2xl bg-white border border-border p-5 hover:border-brand-green hover:-translate-y-0.5 transition shadow-card">
-                <div className="text-3xl">{c.emoji}</div>
-                <h3 className="mt-3 font-display font-bold text-ink">{c.name}</h3>
-                <p className="mt-1 text-sm text-muted-ink">{c.blurb}</p>
-              </div>
-            ))}
-          </div>
+          <Carousel opts={{ align: "start", loop: true }} className="mt-10">
+            <CarouselContent className="-ml-4">
+              {categories.map(c => (
+                <CarouselItem key={c.slug} className="pl-4 basis-full sm:basis-1/2 lg:basis-1/3">
+                  <div className="h-full rounded-2xl bg-white border border-border overflow-hidden hover:border-brand-green hover:-translate-y-0.5 transition shadow-card">
+                    <div className="aspect-[4/3] overflow-hidden bg-surface">
+                      <img
+                        src={c.image}
+                        alt={c.name}
+                        loading="lazy"
+                        className="h-full w-full object-cover"
+                      />
+                    </div>
+                    <div className="p-5">
+                      <h3 className="font-display font-bold text-ink">{c.name}</h3>
+                      <p className="mt-2 text-sm text-muted-ink">{c.blurb}</p>
+                    </div>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="hidden sm:flex -left-4" />
+            <CarouselNext className="hidden sm:flex -right-4" />
+          </Carousel>
         </div>
       </section>
 
-      {/* Customer flow (subordinate) */}
-      <section className="container-pad mx-auto max-w-7xl py-20">
+      {/* Customer flow */}
+      <section className="container-pad mx-auto max-w-7xl py-16">
         <div className="max-w-2xl">
           <span className="text-xs font-bold uppercase tracking-wider text-brand-blue">For customers</span>
-          <h3 className="mt-2 font-display font-extrabold text-2xl md:text-3xl">And on the other side, it's beautifully simple too</h3>
+          <h2 className="mt-2 font-display font-extrabold text-3xl md:text-5xl">And on the other side, it's beautifully simple too</h2>
+          <p className="mt-4 text-lg text-muted-ink">Browse, order, pay and track — every step right inside the Qloqal app.</p>
         </div>
-        <div className="mt-8 grid gap-4 md:grid-cols-3">
+        <div className="mt-12 grid gap-8 md:grid-cols-3">
           {[
-            { n: 1, t: "Open the app", d: "Browse shops within walking and quick-delivery distance." },
-            { n: 2, t: "Pick a nearby shop", d: "Real shops on your street. Real prices. Real availability." },
-            { n: 3, t: "Pay & track", d: "Pay your way. Watch your order move from accepted to ready to delivered." },
+            {
+              n: "01", h: "Open the app",
+              mock: (
+                <div className="rounded-3xl shadow-soft overflow-hidden border border-border bg-white max-w-sm w-full mx-auto">
+                  <div className="bg-gradient-to-br from-brand-blue to-brand-blue-dark text-white p-4">
+                    <div className="text-[11px] uppercase tracking-wide opacity-70">Qloqal app</div>
+                    <div className="font-display font-bold text-lg mt-1">Nearby shops</div>
+                    <div className="mt-1 text-[11px] opacity-80 flex items-center gap-1">
+                      <MapPin className="h-3 w-3" /> Within 1.5 km of you
+                    </div>
+                  </div>
+                  <div className="p-3 space-y-2 bg-surface min-h-[260px]">
+                    {["Sunrise Bakery", "Green Leaf Grocery", "Ada's Pharmacy", "Park St. Florist"].map((s,i) => (
+                      <div key={s} className="bg-white border border-border rounded-xl p-2.5 text-sm flex items-center justify-between">
+                        <span className="font-semibold text-ink">{s}</span>
+                        <span className="text-[10px] bg-brand-green text-ink rounded-full px-2 py-0.5 font-semibold">{(0.3+i*0.4).toFixed(1)} km</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ),
+            },
+            {
+              n: "02", h: "Pick a nearby shop",
+              mock: (
+                <div className="rounded-3xl shadow-soft overflow-hidden border border-border bg-white max-w-sm w-full mx-auto">
+                  <div className="bg-gradient-to-br from-brand-blue to-brand-blue-dark text-white p-4">
+                    <div className="text-[11px] uppercase tracking-wide opacity-70">Sunrise Bakery · 0.3 km</div>
+                    <div className="font-display font-bold text-lg mt-1">Fresh today</div>
+                  </div>
+                  <div className="p-3 space-y-2 bg-surface min-h-[260px]">
+                    {[
+                      { n: "Sourdough loaf", p: "$5.40", qty: 2 },
+                      { n: "Almond croissant", p: "$3.80", qty: 1 },
+                      { n: "Oat milk (1L)", p: "$4.20", qty: 1 },
+                    ].map(item => (
+                      <div key={item.n} className="bg-white border border-border rounded-xl p-2.5 text-sm flex items-center justify-between">
+                        <div>
+                          <div className="font-semibold text-ink">{item.n}</div>
+                          <div className="text-[11px] text-muted-ink">{item.p}</div>
+                        </div>
+                        <div className="text-[11px] bg-brand-blue-soft text-brand-blue rounded-full px-2 py-0.5 font-semibold">× {item.qty}</div>
+                      </div>
+                    ))}
+                    <button className="w-full bg-brand-green text-ink font-semibold rounded-xl py-2.5 mt-2 shadow-card">Place order · $18.40</button>
+                  </div>
+                </div>
+              ),
+            },
+            {
+              n: "03", h: "Pay & track",
+              mock: (
+                <div className="rounded-3xl shadow-soft overflow-hidden border border-border bg-white max-w-sm w-full mx-auto">
+                  <div className="bg-gradient-to-br from-brand-blue to-brand-blue-dark text-white p-4">
+                    <div className="text-[11px] uppercase tracking-wide opacity-70">Order #4821 · Sunrise Bakery</div>
+                    <div className="font-display font-bold text-lg mt-1">On its way</div>
+                  </div>
+                  <div className="p-4 bg-surface min-h-[260px]">
+                    <ul className="space-y-3">
+                      {[
+                        { label: "Order placed", time: "9:41", state: "done" as const },
+                        { label: "Accepted by shop", time: "9:43", state: "done" as const },
+                        { label: "Ready for handover", time: "9:58", state: "done" as const },
+                        { label: "On the way", time: "now", state: "active" as const },
+                      ].map(s => (
+                        <li key={s.label} className="flex items-center gap-3 text-sm">
+                          <span className={[
+                            "h-6 w-6 rounded-full inline-flex items-center justify-center shrink-0",
+                            s.state === "done" ? "bg-brand-green text-ink"
+                              : s.state === "active" ? "bg-brand-blue text-white"
+                              : "bg-border text-muted-ink",
+                          ].join(" ")}>
+                            {s.state === "done" ? <Check className="h-3.5 w-3.5" /> : <span className="h-2 w-2 rounded-full bg-white" />}
+                          </span>
+                          <div className="flex-1">
+                            <div className={["font-semibold", s.state === "active" ? "text-brand-blue" : "text-ink"].join(" ")}>{s.label}</div>
+                          </div>
+                          <span className="text-[11px] text-muted-ink">{s.time}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <div className="mt-4 pt-3 border-t border-border flex items-center justify-between text-sm">
+                      <span className="text-muted-ink">Paid via card</span>
+                      <span className="font-semibold text-ink">$18.40</span>
+                    </div>
+                  </div>
+                </div>
+              ),
+            },
           ].map(s => (
-            <div key={s.n} className="rounded-2xl border border-border p-6 bg-white">
-              <div className="h-8 w-8 rounded-full bg-brand-blue text-white inline-flex items-center justify-center font-bold text-sm">{s.n}</div>
-              <div className="mt-3 font-display font-bold">{s.t}</div>
-              <p className="text-sm text-muted-ink mt-1">{s.d}</p>
+            <div key={s.n} className="flex flex-col gap-4">
+              <div className="flex items-center gap-3">
+                <span className="font-display font-extrabold text-3xl text-brand-green-dark">{s.n}</span>
+                <h3 className="font-display font-bold text-lg">{s.h}</h3>
+              </div>
+              {s.mock}
             </div>
           ))}
         </div>
       </section>
 
-      {/* Why Qloqal — features */}
-      <section className="container-pad mx-auto max-w-7xl py-16">
-        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-          {[
-            { icon: HandCoins, color: "green", t: "Zero-app vendor onboarding", d: "Runs on the WhatsApp the owner already uses." },
-            { icon: MapPin, color: "blue", t: "Hyperlocal first", d: "Only shops within walking or quick-delivery distance." },
-            { icon: ShieldCheck, color: "green", t: "Fair to small businesses", d: "No setup fees, no monthly minimums, no tablet required." },
-            { icon: CreditCard, color: "blue", t: "Pay your way", d: "Cards, wallets, instant bank transfer — your choice." },
-          ].map(f => (
-            <div key={f.t} className="rounded-2xl bg-white border border-border p-6 shadow-card">
-              <div className={["h-11 w-11 rounded-xl inline-flex items-center justify-center", f.color === "green" ? "bg-brand-green text-ink" : "bg-brand-blue text-white"].join(" ")}>
-                <f.icon className="h-5 w-5" />
-              </div>
-              <div className="mt-4 font-display font-bold text-ink">{f.t}</div>
-              <p className="mt-1 text-sm text-muted-ink">{f.d}</p>
-            </div>
-          ))}
-        </div>
-        <div className="mt-10 text-center text-sm text-muted-ink">
-          Powered by WhatsApp Business · Secure payments built in · Works on any smartphone
-        </div>
-      </section>
 
       {/* Vendor testimonials */}
       <section className="container-pad mx-auto max-w-7xl py-16">
@@ -153,25 +234,51 @@ function HomePage() {
         </div>
       </section>
 
-      {/* Comparison table — only place competitor names appear */}
-      <section className="container-pad mx-auto max-w-7xl py-12">
-        <h2 className="font-display font-extrabold text-2xl md:text-3xl">How Qloqal is different</h2>
-        <div className="mt-6 overflow-x-auto rounded-2xl border border-border bg-white">
-          <table className="w-full text-sm min-w-[640px]">
-            <thead className="bg-surface text-ink">
-              <tr>
-                <th className="text-left p-4 font-semibold">Platform</th>
-                <th className="text-left p-4 font-semibold">Vendor side</th>
-                <th className="text-left p-4 font-semibold">Setup effort</th>
-                <th className="text-left p-4 font-semibold">Qloqal's twist</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-border">
-              <tr><td className="p-4 font-semibold">Big-box e-commerce</td><td className="p-4">Required app/portal</td><td className="p-4">High</td><td className="p-4">We use WhatsApp — zero install</td></tr>
-              <tr><td className="p-4 font-semibold">Quick-commerce</td><td className="p-4">Owns dark stores</td><td className="p-4">Capital-heavy</td><td className="p-4">We use existing neighborhood shops</td></tr>
-              <tr><td className="p-4 font-semibold">Food delivery</td><td className="p-4">Tablet + training</td><td className="p-4">Medium-high</td><td className="p-4">We use the phone the owner already owns</td></tr>
-            </tbody>
-          </table>
+      {/* How Qloqal is different — features merged with competitor comparison */}
+      <section className="container-pad mx-auto max-w-7xl py-16">
+        <h2 className="font-display font-extrabold text-3xl md:text-4xl">How Qloqal is different</h2>
+        <div className="mt-8 grid gap-4 md:grid-cols-3">
+          {[
+            {
+              icon: HandCoins, color: "green",
+              title: "Zero-app vendor onboarding",
+              desc: "Runs on the WhatsApp the owner already uses — no install, no training.",
+              vsIcon: ShoppingBag, vsName: "Big-box e-commerce",
+              vsDesc: "Required app/portal · High setup effort",
+            },
+            {
+              icon: MapPin, color: "blue",
+              title: "Hyperlocal first",
+              desc: "Only shops within walking or quick-delivery distance from you.",
+              vsIcon: Warehouse, vsName: "Quick-commerce",
+              vsDesc: "Owns dark stores · Capital-heavy",
+            },
+            {
+              icon: ShieldCheck, color: "green",
+              title: "Fair to small businesses",
+              desc: "No setup fees, no monthly minimums, no tablet required.",
+              vsIcon: Bike, vsName: "Food delivery",
+              vsDesc: "Tablet + training · Medium-high effort",
+            },
+          ].map(c => (
+            <div key={c.title} className="flex flex-col rounded-2xl bg-white border border-border p-6 shadow-card">
+              <div className={["h-11 w-11 rounded-xl inline-flex items-center justify-center", c.color === "green" ? "bg-brand-green text-ink" : "bg-brand-blue text-white"].join(" ")}>
+                <c.icon className="h-5 w-5" />
+              </div>
+              <div className="mt-4 font-display font-bold text-ink text-lg">{c.title}</div>
+              <p className="mt-1 text-sm text-muted-ink">{c.desc}</p>
+              <div className="mt-5 pt-5 border-t border-border">
+                <div className="text-[11px] font-semibold uppercase tracking-wider text-muted-ink flex items-center gap-1.5">
+                  <c.vsIcon className="h-3.5 w-3.5" />
+                  Compared to {c.vsName}
+                </div>
+                <p className="mt-1 text-sm text-ink">{c.vsDesc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className="mt-10 text-center text-sm text-muted-ink">
+          Powered by WhatsApp Business · Secure payments built in · Works on any smartphone
         </div>
       </section>
 

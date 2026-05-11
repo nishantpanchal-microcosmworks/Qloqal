@@ -20,13 +20,14 @@ function PricingPage() {
         <p className="mt-4 text-lg text-muted-ink max-w-2xl">No setup fees. No monthly minimums. No tablet rental. Just a transparent per-order commission when you make a sale.</p>
 
         <div className="mt-12 grid gap-6 md:grid-cols-2">
-          <div className="rounded-3xl bg-brand-blue-soft border border-brand-blue/20 p-8">
-            <div className="text-xs font-bold uppercase tracking-wider text-brand-blue">For customers</div>
-            <div className="mt-3 font-display font-extrabold text-4xl">Free to use. Always.</div>
-            <p className="mt-3 text-muted-ink">Discover, order, and track from any small shop near you.</p>
-            <ul className="mt-6 space-y-2 text-sm">
+          <div className="rounded-3xl bg-brand-blue text-white p-8 shadow-soft relative overflow-hidden">
+            <div className="absolute -top-16 -right-16 h-48 w-48 rounded-full bg-white/15 blur-2xl" />
+            <div className="text-xs font-bold uppercase tracking-wider relative">For customers</div>
+            <div className="mt-3 font-display font-extrabold text-4xl relative">Free to use. Always.</div>
+            <p className="mt-3 text-white/80 relative">Discover, order, and track from any small shop near you.</p>
+            <ul className="mt-6 space-y-2 text-sm relative">
               {["No subscription","No order minimums","Standard delivery fees set per shop"].map(t => (
-                <li key={t} className="flex items-center gap-2"><Check className="h-4 w-4 text-brand-blue" /> {t}</li>
+                <li key={t} className="flex items-center gap-2"><Check className="h-4 w-4" /> {t}</li>
               ))}
             </ul>
           </div>
