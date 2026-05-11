@@ -45,14 +45,16 @@ function PricingPage() {
         </div>
       </section>
 
-      <section className="container-pad mx-auto max-w-7xl py-12">
-        <h2 className="font-display font-extrabold text-3xl mb-6">Pricing FAQ</h2>
-        <FAQAccordion items={[
-          { q: "When do I get paid?", a: "Settlements run on a regular schedule directly into the bank account on file. The exact cadence depends on your region's payment partner." },
-          { q: "What about refunds?", a: "If an order is cancelled or refunded, the corresponding commission is reversed automatically." },
-          { q: "Can I pause my shop anytime?", a: "Yes — set your shop to closed in one tap from WhatsApp. New orders simply won't come through until you reopen." },
-          { q: "What does Qloqal take?", a: "A small per-order commission starting at 5%. Exact percentage depends on your category and delivery model. No fixed fees." },
-        ]} />
+      <section className="bg-surface">
+        <div className="container-pad mx-auto max-w-7xl py-12">
+          <h2 className="font-display font-extrabold text-3xl mb-6">Pricing FAQ</h2>
+          <FAQAccordion items={[
+            { q: "When do I get paid?", a: "Settlements run on a regular schedule directly into the bank account on file. The exact cadence depends on your region's payment partner." },
+            { q: "What about refunds?", a: "If an order is cancelled or refunded, the corresponding commission is reversed automatically." },
+            { q: "Can I pause my shop anytime?", a: "Yes — set your shop to closed in one tap from WhatsApp. New orders simply won't come through until you reopen." },
+            { q: "What does Qloqal take?", a: "A small per-order commission starting at 5%. Exact percentage depends on your category and delivery model. No fixed fees." },
+          ]} />
+        </div>
       </section>
 
       <CTABand title="Start free. Pay only when you sell." />

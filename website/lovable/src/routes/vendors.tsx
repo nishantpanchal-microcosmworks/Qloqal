@@ -76,8 +76,9 @@ function VendorsPage() {
       </section>
 
       {/* How it works on your side */}
-      <section className="container-pad mx-auto max-w-7xl py-16">
-        <h2 className="font-display font-extrabold text-3xl md:text-5xl max-w-3xl">How it works on your side</h2>
+      <section className="bg-surface">
+        <div className="container-pad mx-auto max-w-7xl py-16">
+          <h2 className="font-display font-extrabold text-3xl md:text-5xl max-w-3xl">How it works on your side</h2>
         <p className="mt-4 text-lg text-muted-ink max-w-2xl">A full order, end-to-end — exactly what your phone shows.</p>
         <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {[
@@ -97,6 +98,7 @@ function VendorsPage() {
               {s.m}
             </div>
           ))}
+        </div>
         </div>
       </section>
 

@@ -132,19 +132,21 @@ function CustomersPage() {
         </div>
       </section>
 
-      <section className="container-pad mx-auto max-w-7xl py-16 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
-        {[
-          { i: MapPin, t: "Find what's actually near you", d: "Only shops within walking and quick-delivery distance." },
-          { i: ShoppingBag, t: "Real shops, real prices", d: "The same prices you'd see at the counter — no markup tricks." },
-          { i: Search, t: "Track every order in real time", d: "From accepted to ready to delivered." },
-          { i: CreditCard, t: "Pay any way you like", d: "Cards, wallets, or bank transfer." },
-        ].map(f => (
-          <div key={f.t} className="rounded-2xl bg-white border border-border p-6 shadow-card">
-            <f.i className="h-6 w-6 text-brand-blue" />
-            <div className="mt-3 font-display font-bold">{f.t}</div>
-            <p className="text-sm text-muted-ink mt-1">{f.d}</p>
-          </div>
-        ))}
+      <section className="bg-surface">
+        <div className="container-pad mx-auto max-w-7xl py-16 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+          {[
+            { i: MapPin, t: "Find what's actually near you", d: "Only shops within walking and quick-delivery distance." },
+            { i: ShoppingBag, t: "Real shops, real prices", d: "The same prices you'd see at the counter — no markup tricks." },
+            { i: Search, t: "Track every order in real time", d: "From accepted to ready to delivered." },
+            { i: CreditCard, t: "Pay any way you like", d: "Cards, wallets, or bank transfer." },
+          ].map(f => (
+            <div key={f.t} className="rounded-2xl bg-white border border-border p-6 shadow-card">
+              <f.i className="h-6 w-6 text-brand-blue" />
+              <div className="mt-3 font-display font-bold">{f.t}</div>
+              <p className="text-sm text-muted-ink mt-1">{f.d}</p>
+            </div>
+          ))}
+        </div>
       </section>
 
       <section className="container-pad mx-auto max-w-7xl py-12">

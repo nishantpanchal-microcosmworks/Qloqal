@@ -22,7 +22,8 @@ function HomePage() {
       <Hero />
 
       {/* Vendor flow */}
-      <section className="container-pad mx-auto max-w-7xl py-16">
+      <section className="bg-surface">
+        <div className="container-pad mx-auto max-w-7xl py-16">
         <div className="max-w-2xl">
           <span className="text-xs font-bold uppercase tracking-wider text-brand-blue">For shop owners</span>
           <h2 className="mt-2 font-display font-extrabold text-3xl md:text-5xl">Three taps. That's it.</h2>
@@ -54,6 +55,7 @@ function HomePage() {
               {s.mock}
             </div>
           ))}
+        </div>
         </div>
       </section>
 
@@ -206,7 +208,8 @@ function HomePage() {
 
 
       {/* Vendor testimonials */}
-      <section className="container-pad mx-auto max-w-7xl py-16">
+      <section className="bg-surface">
+        <div className="container-pad mx-auto max-w-7xl py-16">
         <h2 className="font-display font-extrabold text-3xl md:text-4xl max-w-2xl">From the people running the shops</h2>
         <div className="mt-8 grid gap-5 md:grid-cols-3">
           {[
@@ -231,6 +234,7 @@ function HomePage() {
               <div className="mt-2 text-sm text-muted-ink"><strong className="text-ink">{t.n}</strong> — {t.r}</div>
             </div>
           ))}
+        </div>
         </div>
       </section>
 
