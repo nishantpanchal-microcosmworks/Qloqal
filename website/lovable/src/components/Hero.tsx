@@ -8,7 +8,7 @@ export function Hero() {
     <section className="relative overflow-hidden">
       <div aria-hidden className="absolute inset-0 -z-10">
         <div className="absolute -top-40 -right-40 h-[500px] w-[500px] rounded-full bg-brand-green/30 blur-3xl" />
-        <div className="absolute -bottom-40 -left-40 h-[500px] w-[500px] rounded-full bg-brand-blue/15 blur-3xl" />
+        {/* <div className="absolute -bottom-40 -left-40 h-[500px] w-[500px] rounded-full bg-brand-blue/15 blur-3xl" /> */}
       </div>
       <div className="container-pad mx-auto max-w-7xl pt-12 md:pt-20 pb-16 md:pb-24 grid lg:grid-cols-2 gap-12 items-center">
         <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>

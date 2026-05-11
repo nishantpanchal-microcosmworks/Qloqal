@@ -12,7 +12,7 @@ export function Seo({ title, description, ogImage = "/og-default.png", canonical
     <Helmet>
       <title>{title}</title>
       <meta name="description" content={description} />
-      <meta name="theme-color" content="#47E865" />
+      <meta name="theme-color" content="#25D366" />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={ogImage} />
