@@ -1,0 +1,193 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --color-brand-green: var(--brand-green);
+  --color-brand-green-dark: var(--brand-green-dark);
+  --color-brand-green-soft: var(--brand-green-soft);
+  --color-brand-blue: var(--brand-blue);
+  --color-brand-blue-dark: var(--brand-blue-dark);
+  --color-brand-blue-soft: var(--brand-blue-soft);
+}
+
+@theme inline {
+  /* Tighter radius scale — editorial, not bubbly */
+  --radius-sm: calc(var(--radius) - 2px);
+  --radius-md: var(--radius);
+  --radius-lg: calc(var(--radius) + 2px);
+  --radius-xl: 0.75rem;
+  --radius-2xl: 1rem;
+  --radius-3xl: 1.25rem;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-ink: var(--ink);
+  --color-muted-ink: var(--muted-ink);
+  --color-surface: var(--surface);
+  --color-cream: var(--cream);
+
+  --color-chat-bg: var(--chat-bg);
+  --color-chat-incoming: var(--chat-incoming);
+  --color-chat-outgoing: var(--chat-outgoing);
+
+  /* Editorial serif display + geometric sans body */
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Fraunces", "DM Serif Display", ui-serif, Georgia, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  /* Softer shadows — editorial, not glassmorphic */
+  --shadow-soft: 0 4px 18px -8px oklch(0.45 0.10 165 / 0.18);
+  --shadow-card: 0 2px 10px -4px oklch(0.40 0.06 200 / 0.10);
+}
+
+:root {
+  --radius: 0.5rem;
+
+  /* Brand — Official WhatsApp palette */
+  --brand-green: #25D366;
+  --brand-green-dark: #128C7E;
+  --brand-green-soft: #DCF8C6;
+  --brand-blue: #34B7F1;
+  --brand-blue-dark: #0288D1;
+  --brand-blue-soft: #E1F5FE;
+
+  --ink: oklch(0.20 0.04 175);
+  --muted-ink: oklch(0.50 0.02 200);
+  --surface: oklch(0.985 0.005 165);
+  --cream: oklch(0.98 0.012 90);                /* warm off-white for editorial sections */
+
+  --chat-bg: #ECE5DD;
+  --chat-incoming: #ffffff;
+  --chat-outgoing: #DCF8C6;
+
+  --background: #ffffff;
+  --foreground: var(--ink);
+  --card: #ffffff;
+  --card-foreground: var(--ink);
+  --popover: #ffffff;
+  --popover-foreground: var(--ink);
+  --primary: var(--brand-green);
+  --primary-foreground: #ffffff;
+  --secondary: var(--brand-blue-soft);
+  --secondary-foreground: var(--brand-blue-dark);
+  --muted: var(--surface);
+  --muted-foreground: var(--muted-ink);
+  --accent: var(--brand-blue-soft);
+  --accent-foreground: var(--brand-blue-dark);
+  --destructive: oklch(0.6 0.22 25);
+  --destructive-foreground: #ffffff;
+  --border: oklch(0.92 0.008 200);
+  --input: oklch(0.92 0.008 200);
+  --ring: var(--brand-green);
+}
+
+@layer base {
+  * { border-color: var(--color-border); }
+  html { scroll-behavior: smooth; }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    font-feature-settings: "ss01", "ss02", "cv11";
+  }
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    font-optical-sizing: auto;
+    font-variation-settings: "opsz" 144, "SOFT" 50;
+    letter-spacing: -0.02em;
+  }
+  em { font-style: italic; font-variation-settings: "SOFT" 100; }
+}
+
+@layer utilities {
+  .gradient-brand {
+    background-image: linear-gradient(135deg, var(--brand-green), var(--brand-blue));
+  }
+  .gradient-brand-deep {
+    background-image: linear-gradient(135deg, var(--brand-green-dark), var(--brand-blue-dark));
+  }
+  .text-gradient-brand {
+    background-image: linear-gradient(135deg, var(--brand-green-dark), var(--brand-blue-dark));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* Containers */
+  .container-pad { padding-left: 1.25rem; padding-right: 1.25rem; }
+  @media (min-width: 768px) { .container-pad { padding-left: 2rem; padding-right: 2rem; } }
+  .container-narrow { max-width: 56rem; margin-left: auto; margin-right: auto; }
+  .container-wide { max-width: 80rem; margin-left: auto; margin-right: auto; }
+
+  /* Editorial hairlines — replaces section background flips */
+  .hairline-t { border-top: 1px solid var(--color-border); }
+  .hairline-b { border-bottom: 1px solid var(--color-border); }
+  .ruled > * + * { border-top: 1px solid var(--color-border); padding-top: 2rem; margin-top: 2rem; }
+
+  /* Asymmetric split layout (7/5) */
+  .grid-asym {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  @media (min-width: 1024px) {
+    .grid-asym { grid-template-columns: 7fr 5fr; gap: 4rem; }
+    .grid-asym-flip { grid-template-columns: 5fr 7fr; }
+  }
+
+  /* Numbered editorial markers (Fraunces tabular figures) */
+  .num-marker {
+    font-family: var(--font-display);
+    font-feature-settings: "tnum" 1;
+    font-variation-settings: "opsz" 144;
+    font-weight: 500;
+    color: var(--brand-green-dark);
+  }
+
+  /* Magazine-cover hero shell */
+  .editorial-cover {
+    background: var(--cream);
+    color: var(--ink);
+    padding-block: clamp(6rem, 14vw, 12rem);
+  }
+
+  /* Teal bookend panels */
+  .teal-panel {
+    background: var(--brand-green-dark);
+    color: #fff;
+  }
+
+  /* Snap horizontal scroll for category strip */
+  .h-snap {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    padding-inline: max(1.25rem, calc((100vw - 80rem) / 2));
+  }
+  .h-snap::-webkit-scrollbar { display: none; }
+  .h-snap > * { scroll-snap-align: start; flex: 0 0 auto; }
+}
